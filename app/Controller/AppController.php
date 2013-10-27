@@ -31,5 +31,29 @@ App::uses('Controller', 'Controller');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
-class AppController extends Controller {
-}
+ 
+	class AppController extends Controller {
+		var $helpers = array('Form', 'Html', 'Session',	'Js', 'Usermgmt.UserAuth', 'Usermgmt.Image');
+		public $components = array('Session', 'RequestHandler', 'Usermgmt.UserAuth');
+
+		/* Override functions */
+		public function paginate($object = null, $scope = array(), $whitelist = array()) {
+			$sessionKey = sprintf('UserAuth.Search.%s.%s', $this->name, $this->action);
+			if ($this->Session->check($sessionKey)) {
+				$persistedData = $this->Session->read($sessionKey);
+				if(!empty($persistedData['page_limit'])) {
+					$this->paginate['limit']=$persistedData['page_limit'];
+				}
+			}
+			return parent::paginate($object, $scope, $whitelist);
+		}
+		function beforeFilter() {
+			$this->userAuth();
+			if ((isset($this->params['prefix']) && ($this->params['prefix'] == 'admin'))) {
+				$this->layout = 'admin';
+			}
+		}
+		private	function userAuth() {
+			$this->UserAuth->beforeFilter($this);
+		}
+	}
