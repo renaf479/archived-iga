@@ -32,6 +32,12 @@
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
+
+
+Router::connect('/rest/get/:feed', array('controller'=>'iga', 'action'=>'platformGet'));
+//Router::connect('/rest/post', array('controller'=>'iga', 'action'=>'post'));
+
+
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.
@@ -45,5 +51,6 @@
 	require CAKE . 'Config' . DS . 'routes.php';
 
 
-
-Router::connect('/dashboard', array('plugin' => 'usermgmt', 'controller' => 'users', 'action' => 'dashboard', 'admin'=>true));
+//Enable REST API
+	Router::mapResources('creator');
+	Router::parseExtensions();
