@@ -10,7 +10,7 @@ angular.module('services', [])
 				return promise;
 			},
 			post: function(data) {
-				var promise = $http.post('/Post', data).then(function(response) {
+				var promise = $http.post('/rest/post', data).then(function(response) {
 					return response.data;
 				});
 				return promise;

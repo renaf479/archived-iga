@@ -35,7 +35,7 @@
 
 
 Router::connect('/rest/get/:feed', array('controller'=>'iga', 'action'=>'platformGet'));
-//Router::connect('/rest/post', array('controller'=>'iga', 'action'=>'post'));
+Router::connect('/rest/post', array('controller'=>'iga', 'action'=>'platformPost'));
 
 
 /**
