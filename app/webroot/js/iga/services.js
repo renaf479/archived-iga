@@ -3,7 +3,7 @@
 angular.module('services', [])
 	.factory('Rest', function($http) {
 		var Rest = {
-			get: function(action, type) {
+			get: function(action) {
 				var promise = $http.get('/rest/get/'+action).then(function(response) {
 					return response.data;
 				});

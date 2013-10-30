@@ -1,6 +1,6 @@
 body {
 	background: #000 url(/img/reskin.jpg) no-repeat top center;
-	color: gray;
+	color: #fff;
 	margin: 0;
 	font-family: Verdanda, sans-serif;
 }
@@ -21,8 +21,12 @@ body {
 
 
 /* =======================================================================
-	Social header
+	Header
 ========================================================================== */
+#header {
+	height: 165px;
+}
+
 #social {
 	width: 100%;
 	height: 85px;
@@ -51,9 +55,9 @@ body {
 	Twitter ticker
 ========================================================================== */
 
-#twitter {
-	width: 100%;
-	height: 75px;
+#twitter-feed {
+	width: 550px;
+	height: 20px;
 }
 
 #twitter-prev,
@@ -105,7 +109,7 @@ body {
 	color: #fff;
 	width: 285px;
 	position: absolute;
-	top: 73px;
+	top: 69px;
 	right: 320px;
 	font-size: 28px;
 }
@@ -172,7 +176,7 @@ body {
 #games-list {
 	clear: both;
 	background-color: #0e0e10;
-	width: 970px;
+	width: 1000px;
 	margin: 0 auto;
 	padding: 0 15px;
 }

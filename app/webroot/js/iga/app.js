@@ -3,5 +3,6 @@
 var igaApp = angular.module('igaApp', 
 				[
 				'services',
-				'timer'
+				'timer',
+				'ui.bootstrap.carousel'
 				]);

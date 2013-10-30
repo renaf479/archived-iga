@@ -9,6 +9,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</title>
 	<?php
 		//echo $this->Html->meta('icon');
+		echo $this->Html->css('bootstrap.min');
 		echo $this->Html->css('iga');
 		
 		echo $this->Html->script('jquery.min');
@@ -20,6 +21,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->Html->script('iga/services');
 		
 		echo $this->Html->script('plugins/timer');
+		
+		echo $this->Html->script('plugins/angular-ui/carousel');
+		echo $this->Html->script('plugins/angular-ui/transition');
 		//echo $this->Html->script('iga/filters');
 		
 		

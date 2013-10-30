@@ -1,5 +1,5 @@
 var igaController = function($scope, Rest, $timeout) {
-	
+	$scope.tweets 	= {};
 	$scope.games 	= {};
 	$scope.voteDisabled	= '';
 	
@@ -16,15 +16,16 @@ var igaController = function($scope, Rest, $timeout) {
 			_loadGames(response);
 		});
 		
+		Rest.get('twitter').then(function(response) {
+			$scope.tweets = response;
+		});
+		
 			//Starts countdown
-	var dString = "Nov 20, 2013 16:46 PDT";
-	var d1 = new Date(dString);
-	var d2 = new Date();
+			var dString = "Nov 20, 2013 16:46 PDT";
+			var d1 = new Date(dString);
+			var d2 = new Date();
 		$scope.countdown = Math.floor((d1.getTime() - d2.getTime())/1000);
 	}
-	
-
-		
 	
 	
 	//Logs vote and returns social prompt if applicable
@@ -54,17 +55,5 @@ var igaController = function($scope, Rest, $timeout) {
 				console.log(message);
 			}
 		});
-	}
-	
-	//Disables voting button for rate limiting
-/*
-	$scope.voteDisabled = function(model) {
-		if(model === $scope.disabled) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-*/
-		
+	}	
 }
