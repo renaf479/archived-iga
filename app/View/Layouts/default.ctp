@@ -18,6 +18,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->Html->script('iga/controller');
 		echo $this->Html->script('iga/directives');
 		echo $this->Html->script('iga/services');
+		
+		echo $this->Html->script('plugins/timer');
 		//echo $this->Html->script('iga/filters');
 		
 		

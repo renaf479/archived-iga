@@ -2,5 +2,6 @@
 
 var igaApp = angular.module('igaApp', 
 				[
-				'services'
+				'services',
+				'timer'
 				]);

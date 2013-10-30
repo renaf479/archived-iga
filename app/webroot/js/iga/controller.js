@@ -1,7 +1,7 @@
 var igaController = function($scope, Rest, $timeout) {
 	
 	$scope.games 	= {};
-	$scope.disabled	= '';
+	$scope.voteDisabled	= '';
 	
 	var timeout		= 3000;
 	
@@ -15,7 +15,17 @@ var igaController = function($scope, Rest, $timeout) {
 		Rest.get('games').then(function(response) {
 			_loadGames(response);
 		});
+		
+			//Starts countdown
+	var dString = "Nov 20, 2013 16:46 PDT";
+	var d1 = new Date(dString);
+	var d2 = new Date();
+		$scope.countdown = Math.floor((d1.getTime() - d2.getTime())/1000);
 	}
+	
+
+		
+	
 	
 	//Logs vote and returns social prompt if applicable
 	$scope.vote = function(model, type) {
@@ -23,10 +33,10 @@ var igaController = function($scope, Rest, $timeout) {
 			post.route	= 'vote';
 		
 		Rest.post(post).then(function(response) {
-			$scope.disabled = model.id;
+			$scope.voteDisabled = true;
 			
 			$timeout(function() {
-				$scope.disabled = '';
+				$scope.voteDisabled = false;
 			}, timeout);
 			
 			_loadGames(response);
@@ -47,6 +57,7 @@ var igaController = function($scope, Rest, $timeout) {
 	}
 	
 	//Disables voting button for rate limiting
+/*
 	$scope.voteDisabled = function(model) {
 		if(model === $scope.disabled) {
 			return true;
@@ -54,5 +65,6 @@ var igaController = function($scope, Rest, $timeout) {
 			return false;
 		}
 	}
+*/
 		
 }

@@ -1,9 +1,24 @@
 body {
-	background: #000 url(/img/placeholder.jpg) no-repeat top center;
-	min-height: 2712px;
+	background: #000 url(/img/reskin.jpg) no-repeat top center;
 	color: gray;
 	margin: 0;
+	font-family: Verdanda, sans-serif;
 }
+
+.iga-button {
+	background: transparent url(/img/buttons-base.png) no-repeat 0 0;
+	border: 0 none;
+	text-indent: -5000em;
+	width: 41px;
+	height: 47px;
+	cursor: pointer;
+}
+
+.iga-button:hover {
+	background-position: 0 bottom;
+}
+
+
 
 /* =======================================================================
 	Social header
@@ -24,16 +39,11 @@ body {
 
 #social-icons > li {
 	display: inline-block;
-	width: 20px;
-	height: 20px;
-	background-color: blue;
 	margin: 0 3px;
 }
 
 #social-icons > li > a {
 	text-indent: -5000em;
-	width: inherit;
-	height: inherit;
 	display: block;
 }
 
@@ -44,7 +54,23 @@ body {
 #twitter {
 	width: 100%;
 	height: 75px;
-	background-color: red;
+}
+
+#twitter-prev,
+#twitter-next {
+	
+}
+
+#twitter-prev {
+	
+}
+
+#twitter-next {
+	
+}
+
+#twitter-button {
+	
 }
 
 /* =======================================================================
@@ -52,43 +78,155 @@ body {
 ========================================================================== */
 
 #video {
-	width: 780px;
+	width: 937px;
 	margin: 20px auto;
 }
+
+#video-header {
+	font-size: 0px;
+	width: inherit;
+	height: 23px;
+	background: transparent url(/img/video-header.png) no-repeat 0 0;
+}
+
+
+
+/* =======================================================================
+	Countdown
+========================================================================== */
+
+#games-countdown {
+	position: relative;
+	width: 960px;
+	background: transparent url(/img/body-header-left.jpg) no-repeat 0 0;
+}
+
+#gamesCountdown-timer {
+	color: #fff;
+	width: 285px;
+	position: absolute;
+	top: 73px;
+	right: 320px;
+	font-size: 28px;
+}
+
+.countdownTimer-digit {
+	position: absolute;
+}
+
+#countdownTimer-days {
+	left: 20px;
+}
+
+
+#countdownTimer-hours {
+	left: 89px;
+}
+
+
+#countdownTimer-minutes {
+	right: 89px;
+}
+
+
+#countdownTimer-seconds {
+	right: 18px;
+}
+
+
+
+
+#games-corner {
+	width: 42px;
+	background: transparent url(/img/body-header-right.png) no-repeat 0 0;
+}
+
+
+
+
+
 
 /* =======================================================================
 	Games
 ========================================================================== */
-#games {
+#games-container {
+	width: 1002px;
+	margin: 0 auto;
+}
+
+#games-countdown,
+#games-corner {
+	height: 161px;
+	float: left;
+}
+
+
+
+
+
+
+
+/* =======================================================================
+	Game Showcase
+========================================================================== */
+#games-list {
+	clear: both;
+	background-color: #0e0e10;
 	width: 970px;
 	margin: 0 auto;
 	padding: 0 15px;
 }
 
 .game {
+	background: transparent url(/img/games-container.png) no-repeat 0 0;
 	width: 220px;
 	height: 375px;
 	display: inline-block;
 	margin: 13px;
-	outline: 1px solid white;
 	position: relative;
 }
 
 .game-title {
+	font-size: 18px;
 	margin: 0;
-	height: 32px;
-	line-height: 32px;
+	height: 26px;
+	line-height: 30px;
 	text-indent: 15px;
+	font-weight: normal;
 }
 
 .game-vote {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 32px;
+	height: 40px;
+}
+
+.gameVote-twitter,
+.gameVote-facebook {
+	position: absolute;
+}
+
+.gameVote-twitter {
+	left: 5px;
+}
+
+.gameVote-facebook {
+	left: 55px;
 }
 
 .gameVote-general {
+	background: transparent url(/img/vote-buttons.png) no-repeat 0 0;
+	width: 99px;
+	height: 38px;
+	cursor: pointer;
+	border: 0 none;
+	text-indent: -5000em;
 	position: absolute;
-	right: 0;
+	right: -15px;
+}
+
+.gameVote-general:hover,
+.gameVote-general:disabled {
+	background-position: 0 bottom;
 }
