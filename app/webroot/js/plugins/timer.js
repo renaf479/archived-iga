@@ -70,10 +70,10 @@ angular.module('timer', [])
         });
 
         function calculateTimeUnits() {
-          $scope.seconds = Math.floor(($scope.millis / 1000) % 60);
-          $scope.minutes = Math.floor((($scope.millis / (60000)) % 60));
-          $scope.hours = Math.floor((($scope.millis / (3600000)) % 24));
-          $scope.days = Math.floor((($scope.millis / (3600000)) / 24));
+          $scope.seconds 	= ('0' + Math.floor(($scope.millis / 1000) % 60)).slice(-2);
+          $scope.minutes 	= ('0' + Math.floor(($scope.millis / 60000) % 60)).slice(-2);
+          $scope.hours 		= ('0' + Math.floor(($scope.millis / 3600000) % 24)).slice(-2);
+          $scope.days 		= ('0' + Math.floor(($scope.millis / 3600000) / 24)).slice(-2);
         }
 
         //determine initial values of time units

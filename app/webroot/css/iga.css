@@ -1,36 +1,156 @@
+/* =======================================================================
+	General
+========================================================================== */
+
+@font-face {
+    font-family: 'ProximaNova-Regular';
+    src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Regular.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Regular-3ebe1de28d9e0f07c3f616be9af103ef.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Regular-d672b41ff8a220175e5b54c202399f6a.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Regular.svg#svgFontName) format("svg");
+}
+
+@font-face {
+    font-family: 'ProximaNova-RegularItalic';
+    src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-RegularItalic.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-RegularItalic-a5f85f4d65d1453a9413c74d41aafd48.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-RegularItalic-f55ba3b4f2b95896fa8e9b3fdb6783f5.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-RegularItalic.svg#svgFontName) format("svg");
+}
+
+@font-face {
+    font-family: 'ProximaNova-Semibold';
+    src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Semibold.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Semibold-8b7c258f71addd8f88274b83c39951f5.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Semibold-bb626741d8b7a6bf8cb5b00f62978112.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Semibold.svg#svgFontName) format("svg");
+}
+
+@font-face {
+    font-family: 'ProximaNova-Bold';
+    src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Bold.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Bold-242cf4c95fb0663f05652256e2e9c232.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Bold-74473c52a1ec339eda49441722db9791.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Bold.svg#svgFontName) format("svg");
+}
+
+@font-face {
+    font-family: 'ProximaNova-Black';
+    src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Black.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Black-062fa28cd9c03fd9d25cf6962012d596.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Black-caba3b4524d0eb697bff7ea502ea7dcd.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Black.svg#svgFontName) format("svg");
+}
+
+@font-face {
+    font-family: 'Bitter-Regular';
+    src: url(//machinima-static.s3.amazonaws.com/assets/Bitter-Regular.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/Bitter-Regular-be3404895c7cce66c65747c53465d17c.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/Bitter-Regular-76864867fed0e9840927525519e2e07c.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/Bitter-Regular.svg#svgFontName) format("svg");
+}
+
 body {
-	background: #000 url(/img/reskin.jpg) no-repeat top center;
+	/* background: #000 url(/img/reskin.jpg) no-repeat top center; */
 	color: #fff;
 	margin: 0;
-	font-family: Verdanda, sans-serif;
+	font-family: "ProximaNova-Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: "ProximaNova-Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
-.iga-button {
-	background: transparent url(/img/buttons-base.png) no-repeat 0 0;
-	border: 0 none;
-	text-indent: -5000em;
-	width: 41px;
-	height: 47px;
-	cursor: pointer;
+.transition,
+.transition:after {
+	-webkit-transition: opacity 0.35s;
+	-moz-transition:    opacity 0.35s;
+	-o-transition:      opacity 0.35s;
 }
 
-.iga-button:hover {
-	background-position: 0 bottom;
+.transition:after {
+	content: "";
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	opacity: 0;
 }
 
-
+.transition:hover:after {
+	opacity: 1;
+}
 
 /* =======================================================================
 	Header
 ========================================================================== */
 #header {
-	height: 165px;
+	background: transparent url(/img/header-repeat.jpg) repeat-x 0 0;
+	width: 100%;
+	height: 161px;
+}
+
+#header-container {
+	width: 1000px;
+	margin: 0 auto;
+	height: inherit;
+	position: relative;
 }
 
 #social {
-	width: 100%;
-	height: 85px;
+	width: 250px;
+	height: 47px;
+	position: absolute;
+	top: 5px;
+	right: 0px;
+}
+
+#social > li {
+	display: inline-block;
+}
+
+.social-icon {
+	background: transparent url(/img/social-sprite.png) no-repeat 0 0;
+	width: 41px;
+	height: 47px;
+	display: block;
+	text-indent: -5000em;
 	position: relative;
+}
+
+.social-icon:after {
+	content: "";
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	background: transparent url(/img/social-sprite.png) no-repeat 0 bottom;
+	opacity: 0;
+}
+
+.social-icon:hover:after {
+	opacity: 1;
+}
+
+#social-youtube {
+	background-position: 0 0;
+}
+
+#social-twitter {
+	background-position: -41px 0;
+}
+
+#social-twitter:after {
+	background-position: -41px bottom;
+}
+
+#social-twitter:after {
+	background-position: -41px bottom;
+}
+
+#social-facebook {
+	background-position: -82px 0;
+}
+
+#social-facebook:after {
+	background-position: -82px bottom;
+}
+
+#social-google {
+	background-position: -123px 0;
+}
+
+#social-google:after {
+	background-position: -123px bottom;
+}
+
+#social-instagram {
+	background-position: -164px 0;
+}
+
+#social-instagram:after {
+	background-position: -164px bottom;
+}
+
+/*
+#social > li {
+	display: inline-block;
+	margin: 0 3px;
 }
 
 #social-icons {
@@ -41,41 +161,136 @@ body {
 	top: 15px;
 }
 
-#social-icons > li {
-	display: inline-block;
-	margin: 0 3px;
-}
-
 #social-icons > li > a {
 	text-indent: -5000em;
 	display: block;
 }
+*/
 
 /* =======================================================================
 	Twitter ticker
 ========================================================================== */
-
 #twitter-feed {
-	width: 550px;
-	height: 20px;
+	position: absolute;
+	top: 90px;
+	width: 100%;
+}
+/*
+
+#twitter-link {
+	background: transparent url(/img/twitter-sprite.png) no-repeat 0 0;
+	position: absolute;
+	right: 30px;
+	top: 8px;
+	width: 45px;
+	height: 51px;
+	text-indent: -5000em;
+}
+*/
+
+#twitter-link:after {
+	background: transparent url(/img/twitter-sprite.png) no-repeat 0 -51px;
 }
 
-#twitter-prev,
-#twitter-next {
-	
+#twitter-feed .carousel-control {
+	background: transparent url(/img/twitter-sprite.png) no-repeat;
+	position: absolute;
+	width: 23px;
+	height: 29px;
+	text-indent: -5000em;
+	top: -20px;
+	cursor: pointer;
+	display: block;
 }
 
-#twitter-prev {
-	
+#twitter-feed .carousel-control.left {
+	background-position: bottom left;
+	right: 52px;
 }
 
-#twitter-next {
-	
+#twitter-feed .carousel-control.right {
+	background-position: bottom left;
+	right: 29px;
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
 }
 
-#twitter-button {
-	
+#twitter-feed .carousel-control.left:after {
+	background: transparent url(/img/twitter-sprite.png) no-repeat right bottom;
 }
+
+#twitter-feed .carousel-control.right:after {
+	background: transparent url(/img/twitter-sprite.png) no-repeat right bottom;
+}
+
+/*
+
+.carousel {
+	position: relative;
+}
+
+.carousel-inner {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.carousel-inner > .item {
+  position: relative;
+  display: none;
+  -webkit-transition: 0.6s ease-in-out left;
+     -moz-transition: 0.6s ease-in-out left;
+       -o-transition: 0.6s ease-in-out left;
+          transition: 0.6s ease-in-out left;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+	display: none;
+}
+
+.carousel-inner > .next,
+.carousel-inner > .prev,
+.carousel-inner > .active {
+	display: block;
+}
+
+.carousel-inner > .active {
+	left: 0;
+}
+
+.carousel-inner > .next,
+.carousel-inner > .prev {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.carousel-inner > .next {
+  left: 100%;
+}
+
+.carousel-inner > .prev {
+  left: -100%;
+}
+
+.carousel-inner > .next.left,
+.carousel-inner > .prev.right {
+  left: 0;
+}
+
+.carousel-inner > .active.left {
+  left: -100%;
+}
+
+.carousel-inner > .active.right {
+  left: 100%;
+}
+*/
 
 /* =======================================================================
 	Video player
@@ -93,65 +308,8 @@ body {
 	background: transparent url(/img/video-header.png) no-repeat 0 0;
 }
 
-
-
 /* =======================================================================
-	Countdown
-========================================================================== */
-
-#games-countdown {
-	position: relative;
-	width: 960px;
-	background: transparent url(/img/body-header-left.jpg) no-repeat 0 0;
-}
-
-#gamesCountdown-timer {
-	color: #fff;
-	width: 285px;
-	position: absolute;
-	top: 69px;
-	right: 320px;
-	font-size: 28px;
-}
-
-.countdownTimer-digit {
-	position: absolute;
-}
-
-#countdownTimer-days {
-	left: 20px;
-}
-
-
-#countdownTimer-hours {
-	left: 89px;
-}
-
-
-#countdownTimer-minutes {
-	right: 89px;
-}
-
-
-#countdownTimer-seconds {
-	right: 18px;
-}
-
-
-
-
-#games-corner {
-	width: 42px;
-	background: transparent url(/img/body-header-right.png) no-repeat 0 0;
-}
-
-
-
-
-
-
-/* =======================================================================
-	Games
+	Games Listing Container
 ========================================================================== */
 #games-container {
 	width: 1002px;
@@ -164,11 +322,49 @@ body {
 	float: left;
 }
 
+#games-countdown {
+	position: relative;
+	width: 960px;
+	background: transparent url(/img/body-header-left.jpg) no-repeat 0 0;
+}
+
+#games-corner {
+	width: 42px;
+	background: transparent url(/img/body-header-right.png) no-repeat 0 0;
+}
+
+/* =======================================================================
+	Countdown
+========================================================================== */
+#gamesCountdown-timer {
+	color: #fff;
+	width: 285px;
+	position: absolute;
+	top: 65px;
+	right: 320px;
+	font-size: 28px;
+}
+
+.countdownTimer-digit {
+	position: absolute;
+}
+
+#countdownTimer-days {
+	left: 20px;
+}
+
+#countdownTimer-hours {
+	left: 89px;
+}
+
+#countdownTimer-minutes {
+	right: 89px;
+}
 
 
-
-
-
+#countdownTimer-seconds {
+	right: 18px;
+}
 
 /* =======================================================================
 	Game Showcase

@@ -1,29 +1,35 @@
 <div id="" class="" data-ng-controller="igaController" data-ng-init="init()">
 
 	<div id="header">
-		<div id="social">
-			<ul id="social-icons">
+		<div id="header-container">
+			<ul id="social">
 				<li>
-					<a href="http://facebook.com/Machinima" class="iga-button" target="_blank">facebook</a>
+					<a href="http://youtube.com/machinima" id="social-youtube" class="social-icon transition" target="_blank">Youtube</a>
 				</li>
 				<li>
-					<a href="http://twitter.com/machinima_com" class="iga-button" target="_blank">twitter</a>
+					<a href="http://twitter.com/machinima_com" id="social-twitter" class="social-icon transition" target="_blank">twitter</a>
 				</li>
 				<li>
-					<a href="http://instagram.com/machinima" class="iga-button" target="_blank">instagram</a>
+					<a href="http://facebook.com/Machinima" id="social-facebook" class="social-icon transition" target="_blank">facebook</a>
 				</li>
 				<li>
-					<a href="http://youtube.com/machinima" class="iga-button" target="_blank">Youtube</a>
+					<a href="http://twitter.com/machinima_com" id="social-google" class="social-icon transition" target="_blank">twitter</a>
+				</li>
+				<li>
+					<a href="http://instagram.com/machinima" id="social-instagram" class="social-icon transition" target="_blank">instagram</a>
 				</li>
 			</ul>
+			<div id="twitter-feed">
+				<carousel id="">
+					<slide data-ng-repeat="tweet in tweets">{{tweet.text}}</slide>
+				</carousel>
+				<a href="" id="twitter-link" class="transition">twitter</a>
+			</div>
 		</div>
-		<carousel id="twitter-feed">
-			<slide data-ng-repeat="tweet in tweets">{{tweet.text}}</slide>
-		</carousel>
 	</div>
 	<div id="video">
 		<h2 id="video-header">Inside Gaming Daily</h2>
-		<iframe width="780" height="439" src="//www.youtube.com/embed/BfJVgXBfSH8?rel=0" frameborder="0" allowfullscreen></iframe>
+<!-- 		<iframe width="780" height="439" src="//www.youtube.com/embed/BfJVgXBfSH8?rel=0" frameborder="0" allowfullscreen></iframe> -->
 	</div>
 	
 	<div id="games-container">
@@ -43,8 +49,8 @@
 			<div id="" class="game" data-ng-repeat="game in games">
 				<h3 class="game-title">{{game.meta.title}}</h3>
 				<div class="game-vote">
-					<button class="gameVote-twitter iga-button" data-ng-click="vote(game, 'twitter')" data-ng-disabled="voteDisabled">Twitter</button>
-					<button class="gameVote-facebook iga-button" data-ng-click="vote(game, 'facebook')" data-ng-disabled="voteDisabled">Facebook</button>
+					<button class="gameVote-twitter" data-ng-click="vote(game, 'twitter')" data-ng-disabled="voteDisabled">Twitter</button>
+					<button class="gameVote-facebook" data-ng-click="vote(game, 'facebook')" data-ng-disabled="voteDisabled">Facebook</button>
 					<button class="gameVote-general" data-ng-click="vote(game)" data-ng-disabled="voteDisabled">Vote{{game.id}}</button>
 				</div>
 			</div>
