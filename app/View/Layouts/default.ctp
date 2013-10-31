@@ -9,7 +9,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</title>
 	<?php
 		//echo $this->Html->meta('icon');
-		echo $this->Html->css('bootstrap.min');
+		//echo $this->Html->css('bootstrap.min');
 		echo $this->Html->css('iga');
 		
 		echo $this->Html->script('jquery.min');

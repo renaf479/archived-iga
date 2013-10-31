@@ -33,11 +33,15 @@
 }
 
 body {
-	/* background: #000 url(/img/reskin.jpg) no-repeat top center; */
+	background: #000 url(/img/reskin.jpg) no-repeat top center;
 	color: #fff;
 	margin: 0;
 	font-family: "ProximaNova-Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-weight: "ProximaNova-Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+a {
+	outline: none;
 }
 
 .transition,
@@ -74,12 +78,25 @@ body {
 	position: relative;
 }
 
+#header-logo {
+	background: transparent url(/img/header-logo.png) no-repeat 0 0;
+	width: 295px;
+	height: 135px;
+	position: absolute;
+	top: 20px;
+	left: 0;
+	text-indent: -5000em;
+	margin: 0;
+}
+
 #social {
 	width: 250px;
 	height: 47px;
 	position: absolute;
 	top: 5px;
 	right: 0px;
+	margin: 0;
+	padding: 0;
 }
 
 #social > li {
@@ -96,15 +113,7 @@ body {
 }
 
 .social-icon:after {
-	content: "";
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
 	background: transparent url(/img/social-sprite.png) no-repeat 0 bottom;
-	opacity: 0;
-}
-
-.social-icon:hover:after {
-	opacity: 1;
 }
 
 #social-youtube {
@@ -147,26 +156,6 @@ body {
 	background-position: -164px bottom;
 }
 
-/*
-#social > li {
-	display: inline-block;
-	margin: 0 3px;
-}
-
-#social-icons {
-	padding: 0;
-	margin: 0;
-	position: absolute;
-	right: 15px;
-	top: 15px;
-}
-
-#social-icons > li > a {
-	text-indent: -5000em;
-	display: block;
-}
-*/
-
 /* =======================================================================
 	Twitter ticker
 ========================================================================== */
@@ -175,7 +164,6 @@ body {
 	top: 90px;
 	width: 100%;
 }
-/*
 
 #twitter-link {
 	background: transparent url(/img/twitter-sprite.png) no-repeat 0 0;
@@ -186,7 +174,6 @@ body {
 	height: 51px;
 	text-indent: -5000em;
 }
-*/
 
 #twitter-link:after {
 	background: transparent url(/img/twitter-sprite.png) no-repeat 0 -51px;
@@ -197,10 +184,10 @@ body {
 	position: absolute;
 	width: 23px;
 	height: 29px;
-	text-indent: -5000em;
 	top: -20px;
 	cursor: pointer;
 	display: block;
+	font-size: 0px;
 }
 
 #twitter-feed .carousel-control.left {
@@ -227,16 +214,16 @@ body {
 	background: transparent url(/img/twitter-sprite.png) no-repeat right bottom;
 }
 
-/*
-
 .carousel {
 	position: relative;
 }
 
 .carousel-inner {
 	position: relative;
-	width: 100%;
+	width: 600px;
 	overflow: hidden;
+	top: 23px;
+	left: 310px;
 }
 
 .carousel-inner > .item {
@@ -290,8 +277,6 @@ body {
 .carousel-inner > .active.right {
   left: 100%;
 }
-*/
-
 /* =======================================================================
 	Video player
 ========================================================================== */
@@ -340,7 +325,7 @@ body {
 	color: #fff;
 	width: 285px;
 	position: absolute;
-	top: 65px;
+	top: 68px;
 	right: 320px;
 	font-size: 28px;
 }
@@ -350,7 +335,7 @@ body {
 }
 
 #countdownTimer-days {
-	left: 20px;
+	left: 18px;
 }
 
 #countdownTimer-hours {
@@ -358,9 +343,8 @@ body {
 }
 
 #countdownTimer-minutes {
-	right: 89px;
+	right: 91px;
 }
-
 
 #countdownTimer-seconds {
 	right: 18px;
@@ -371,10 +355,10 @@ body {
 ========================================================================== */
 #games-list {
 	clear: both;
-	background-color: #0e0e10;
+	background: transparent url(/img/body-repeat.png) repeat-y 0 0;
 	width: 1000px;
 	margin: 0 auto;
-	padding: 0 15px;
+	padding: 0 15px 65px;
 }
 
 .game {
@@ -387,6 +371,7 @@ body {
 }
 
 .game-title {
+	color: #7e7e7f;
 	font-size: 18px;
 	margin: 0;
 	height: 26px;
@@ -402,31 +387,109 @@ body {
 	height: 40px;
 }
 
+.gameVote-facebook,
 .gameVote-twitter,
-.gameVote-facebook {
+.gameVote-general {
+	background: transparent url(/img/vote-sprite.png) no-repeat 0 0;
 	position: absolute;
+	border: 0 none;
+	text-indent: -5000em;
+	cursor: pointer;
+	top: 2px;
 }
 
 .gameVote-twitter {
-	left: 5px;
+	background-position: -31px 0;
+	left: 10px;
+	width: 31px;
+	height: 36px;
 }
 
 .gameVote-facebook {
-	left: 55px;
+	background-position: 0 0;
+	left: 62px;
+	width: 31px;
+	height: 36px;
 }
 
 .gameVote-general {
-	background: transparent url(/img/vote-buttons.png) no-repeat 0 0;
-	width: 99px;
-	height: 38px;
-	cursor: pointer;
-	border: 0 none;
-	text-indent: -5000em;
-	position: absolute;
-	right: -15px;
+	background-position: top right;
+	width: 101px;
+	height: 39px;
+	right: -13px;
+	top: -4px;
 }
 
+.gameVote-twitter:after {
+	background: transparent url(/img/vote-sprite.png) no-repeat -31px -39px;
+}
+
+.gameVote-facebook:after {
+	background: transparent url(/img/vote-sprite.png) no-repeat 0 -39px;
+}
+
+.gameVote-general:after {
+	background: transparent url(/img/vote-sprite.png) no-repeat bottom right;
+}
+
+/*
 .gameVote-general:hover,
 .gameVote-general:disabled {
 	background-position: 0 bottom;
+}
+*/
+
+/* =======================================================================
+	Game Showcase
+========================================================================== */
+#footer {
+	background: transparent url(/img/footer-repeat.jpg) repeat-x 0 0;
+	width: 100%;
+	height: 199px;
+	position: relative;
+}
+
+#footer-newsletter {
+	position: absolute;
+	width: 461px;
+	height: 80px;
+	left: 50%;
+	top: -45px;
+	transform: translate(-50%, 0);
+}
+
+#newsletter-header {
+	background: transparent url(/img/newsletter-sprite.png) no-repeat right top;
+	width: 92px;
+	height: 80px;
+	margin: 0 auto;
+	display: block;
+	text-indent: -5000em;
+}
+
+#newsletter-form {
+	width: inherit;
+	height: inherit;
+	position: relative;
+}
+
+#newsletter-input {
+	background: transparent url(/img/newsletter-sprite.png) no-repeat 0 0;
+	width: inherit;
+	height: inherit;
+	border: 0 none;
+	color: #fff;
+	text-indent: 30px;
+	font-size: 20px;
+}
+
+#newsletter-submit {
+	background: transparent url(/img/newsletter-sprite.png) no-repeat -461px 0;
+	width: 90px;
+	height: 49px;
+	border: 0 none;
+	color: #fff;
+	position: absolute;
+	top: 15px;
+	right: 15px;
 }

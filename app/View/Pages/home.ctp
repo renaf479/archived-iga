@@ -2,6 +2,7 @@
 
 	<div id="header">
 		<div id="header-container">
+			<a href="/" id="header-logo">Inside Gaming Awards</a>
 			<ul id="social">
 				<li>
 					<a href="http://youtube.com/machinima" id="social-youtube" class="social-icon transition" target="_blank">Youtube</a>
@@ -20,7 +21,7 @@
 				</li>
 			</ul>
 			<div id="twitter-feed">
-				<carousel id="">
+				<carousel id="" interval="carousel.interval">
 					<slide data-ng-repeat="tweet in tweets">{{tweet.text}}</slide>
 				</carousel>
 				<a href="" id="twitter-link" class="transition">twitter</a>
@@ -29,12 +30,11 @@
 	</div>
 	<div id="video">
 		<h2 id="video-header">Inside Gaming Daily</h2>
-<!-- 		<iframe width="780" height="439" src="//www.youtube.com/embed/BfJVgXBfSH8?rel=0" frameborder="0" allowfullscreen></iframe> -->
+		<iframe width="937" height="527" src="//www.youtube.com/embed/BfJVgXBfSH8?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 	
 	<div id="games-container">
 		<div id="games-countdown">
-			
 			<timer id="gamesCountdown-timer" countdown="countdown" interval="1000">
 				<span id="countdownTimer-days" class="countdownTimer-digit">{{days}}</span>
 				<span id="countdownTimer-hours" class="countdownTimer-digit">{{hours}}</span>
@@ -49,11 +49,20 @@
 			<div id="" class="game" data-ng-repeat="game in games">
 				<h3 class="game-title">{{game.meta.title}}</h3>
 				<div class="game-vote">
-					<button class="gameVote-twitter" data-ng-click="vote(game, 'twitter')" data-ng-disabled="voteDisabled">Twitter</button>
-					<button class="gameVote-facebook" data-ng-click="vote(game, 'facebook')" data-ng-disabled="voteDisabled">Facebook</button>
-					<button class="gameVote-general" data-ng-click="vote(game)" data-ng-disabled="voteDisabled">Vote{{game.id}}</button>
+					<button class="gameVote-twitter transition" data-ng-click="vote(game, 'twitter')" data-ng-disabled="voteDisabled">Twitter</button>
+					<button class="gameVote-facebook transition" data-ng-click="vote(game, 'facebook')" data-ng-disabled="voteDisabled">Facebook</button>
+					<button class="gameVote-general transition" data-ng-click="vote(game)" data-ng-disabled="voteDisabled">Vote{{game.id}}</button>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="footer-newsletter">
+			<span id="newsletter-header">Newsletter</span>
+			<form id="newsletter-form">
+				<input type="text" id="newsletter-input"/>
+				<input type="submit" id="newsletter-submit" value="Submit"/>
+			</form>
 		</div>
 	</div>
 </div>

@@ -210,7 +210,8 @@ angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
     replace: true,
     controller: 'CarouselController',
     require: 'carousel',
-    templateUrl: 'template/carousel/carousel.html',
+    //templateUrl: 'template/carousel/carousel.html',
+    template: '<div data-ng-mouseenter="pause()" data-ng-mouseleave="play()" class="carousel"><div class="carousel-inner" data-ng-transclude></div><a data-ng-click="prev()" class="carousel-control left transition" data-ng-show="slides().length > 1">&lsaquo;</a><a data-ng-click="next()" class="carousel-control right transition" data-ng-show="slides().length > 1">&rsaquo;</a></div>',
     scope: {
       interval: '=',
       noTransition: '=',
@@ -289,7 +290,8 @@ function CarouselDemoCtrl($scope) {
     restrict: 'EA',
     transclude: true,
     replace: true,
-    templateUrl: 'template/carousel/slide.html',
+    template: '<div ng-class="{\'active\': leaving || (active && !entering),\'prev\': (next || active) && direction==\'prev\',\'next\': (next || active) && direction==\'next\',\'right\': direction==\'prev\',\'left\': direction==\'next\'}" class="item" ng-transclude></div>',
+    //templateUrl: 'template/carousel/slide.html',
     scope: {
     },
     link: function (scope, element, attrs, carouselCtrl) {

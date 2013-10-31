@@ -3,6 +3,10 @@ var igaController = function($scope, Rest, $timeout) {
 	$scope.games 	= {};
 	$scope.voteDisabled	= '';
 	
+	$scope.carousel	= {
+		interval:	3000
+	}
+	
 	var timeout		= 3000;
 	
 	//Parse JSON feed of games
