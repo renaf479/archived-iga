@@ -12,7 +12,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		//echo $this->Html->css('bootstrap.min');
 		echo $this->Html->css('iga');
 		
-		echo $this->Html->script('jquery.min');
+		//echo $this->Html->script('jquery.min');
 		echo $this->Html->script('angular.min');
 		echo $this->Html->script('iga/app');
 		

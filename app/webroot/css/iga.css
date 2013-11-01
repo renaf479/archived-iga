@@ -40,15 +40,18 @@ body {
     font-weight: "ProximaNova-Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
-a {
+a,
+input,
+button {
 	outline: none;
 }
 
 .transition,
 .transition:after {
-	-webkit-transition: opacity 0.35s;
-	-moz-transition:    opacity 0.35s;
-	-o-transition:      opacity 0.35s;
+	-webkit-transition: all 0.35s;
+	-moz-transition:    all 0.35s;
+	-o-transition:      all 0.35s;
+	transition:			all 0.35s;
 }
 
 .transition:after {
@@ -79,7 +82,7 @@ a {
 }
 
 #header-logo {
-	background: transparent url(/img/header-logo.png) no-repeat 0 0;
+	/* background: transparent url(/img/header-logo.png) no-repeat 0 0; */
 	width: 295px;
 	height: 135px;
 	position: absolute;
@@ -165,8 +168,8 @@ a {
 	width: 100%;
 }
 
-#twitter-link {
-	background: transparent url(/img/twitter-sprite.png) no-repeat 0 0;
+#twitter-logo {
+	background: transparent url(/img/twitter-sprite.png) no-repeat 0 -51px;
 	position: absolute;
 	right: 30px;
 	top: 8px;
@@ -244,6 +247,7 @@ a {
 .carousel-inner > .prev,
 .carousel-inner > .active {
 	display: block;
+	text-align: right;
 }
 
 .carousel-inner > .active {
@@ -374,11 +378,33 @@ a {
 	color: #7e7e7f;
 	font-size: 18px;
 	margin: 0;
-	height: 26px;
+	height: 50px;
 	line-height: 30px;
 	text-indent: 15px;
 	font-weight: normal;
 }
+
+/*
+.game-art-container {
+	width: 220px;
+	height: 280px;
+	overflow: hidden;
+	position: relative;
+}
+*/
+
+.game-art {
+	background-position: center center;
+	background-size: 100% 100%;
+	width: 220px;
+	height: 280px;
+	display: block;
+}
+
+.game-art:hover {
+	background-size: 110% 110%;
+}
+
 
 .game-vote {
 	position: absolute;
@@ -492,4 +518,9 @@ a {
 	position: absolute;
 	top: 15px;
 	right: 15px;
+	text-transform: uppercase;
+}
+
+#newsletter-submit:disabled {
+	opacity: .2;
 }

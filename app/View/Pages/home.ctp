@@ -24,16 +24,17 @@
 				<carousel id="" interval="carousel.interval">
 					<slide data-ng-repeat="tweet in tweets">{{tweet.text}}</slide>
 				</carousel>
-				<a href="" id="twitter-link" class="transition">twitter</a>
+				<div id="twitter-logo" class="transition">twitter</div>
 			</div>
 		</div>
 	</div>
 	<div id="video">
 		<h2 id="video-header">Inside Gaming Daily</h2>
-		<iframe width="937" height="527" src="//www.youtube.com/embed/BfJVgXBfSH8?rel=0" frameborder="0" allowfullscreen></iframe>
+<!-- 		<iframe width="937" height="527" src="//www.youtube.com/embed/BfJVgXBfSH8?rel=0" frameborder="0" allowfullscreen></iframe> -->
 	</div>
 	
 	<div id="games-container">
+<!--
 		<div id="games-countdown">
 			<timer id="gamesCountdown-timer" countdown="countdown" interval="1000">
 				<span id="countdownTimer-days" class="countdownTimer-digit">{{days}}</span>
@@ -44,10 +45,12 @@
 			
 		</div>
 		<div id="games-corner"></div>
+-->
 		
 		<div id="games-list">
 			<div id="" class="game" data-ng-repeat="game in games">
 				<h3 class="game-title">{{game.meta.title}}</h3>
+				<game-art data-ng-model="game" class="game-art transition"></game-art>
 				<div class="game-vote">
 					<button class="gameVote-twitter transition" data-ng-click="vote(game, 'twitter')" data-ng-disabled="voteDisabled">Twitter</button>
 					<button class="gameVote-facebook transition" data-ng-click="vote(game, 'facebook')" data-ng-disabled="voteDisabled">Facebook</button>
@@ -59,9 +62,9 @@
 	<div id="footer">
 		<div id="footer-newsletter">
 			<span id="newsletter-header">Newsletter</span>
-			<form id="newsletter-form">
-				<input type="text" id="newsletter-input"/>
-				<input type="submit" id="newsletter-submit" value="Submit"/>
+			<form id="newsletter-form" name="newsletterForm" novalidate>
+				<input type="email" id="newsletter-input" data-ng-model="email" required/>
+				<button id="newsletter-submit" class="transition" data-ng-disabled="newsletterForm.$invalid">Submit</button>
 			</form>
 		</div>
 	</div>

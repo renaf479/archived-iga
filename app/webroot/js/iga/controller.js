@@ -2,9 +2,10 @@ var igaController = function($scope, Rest, $timeout) {
 	$scope.tweets 	= {};
 	$scope.games 	= {};
 	$scope.voteDisabled	= '';
+	$scope.email = '';
 	
 	$scope.carousel	= {
-		interval:	3000
+		interval:	5000
 	}
 	
 	var timeout		= 3000;
@@ -17,7 +18,7 @@ var igaController = function($scope, Rest, $timeout) {
 	//Page init
 	$scope.init = function() {
 		Rest.get('games').then(function(response) {
-			_loadGames(response);
+			_loadGames(response.sort($scope.random));
 		});
 		
 		Rest.get('twitter').then(function(response) {
@@ -31,6 +32,10 @@ var igaController = function($scope, Rest, $timeout) {
 		$scope.countdown = Math.floor((d1.getTime() - d2.getTime())/1000);
 	}
 	
+	//Randomizes the orderBy results
+	$scope.random = function(){
+    	return 0.5 - Math.random();
+	}
 	
 	//Logs vote and returns social prompt if applicable
 	$scope.vote = function(model, type) {
@@ -44,19 +49,23 @@ var igaController = function($scope, Rest, $timeout) {
 				$scope.voteDisabled = false;
 			}, timeout);
 			
-			_loadGames(response);
+			//_loadGames(response);
 			if(typeof type !== 'undefined') {
-				var message;
+				var message, link;
 				switch(type) {
 					case 'facebook':
-						message	= 'Voted for #'+model.meta.hashtag+' for Machinima’s Gamers Choice Award. Who will you vote for? #IGAs <shortened link to site>';
+						message	= 'Voted for #'+model.meta.hashtag+' for Machinima’s Gamers Choice Award. Who will you vote for? #IGAs http://...';
+						link 	= '';
 						break;
 					case 'twitter':
-						message = 'Voted for #'+model.meta.hashtag+' for Gamers Choice Award. Who will you vote for? #IGAs <shortened link to site>'
+						message = 'Voted for #'+model.meta.hashtag+' for Gamers Choice Award. Who will you vote for? #IGAs http://...'
+						link 	= 'https://twitter.com/share?url=/&text='+encodeURIComponent(message);
 						break;
 				}
 				
-				console.log(message);
+				window.open(link, '_blank');
+				
+				//console.log(message);
 			}
 		});
 	}	
