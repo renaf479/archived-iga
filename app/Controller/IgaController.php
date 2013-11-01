@@ -90,8 +90,7 @@ class IgaController extends AppController {
 		);
 			
 		$url 			= 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-		//$getfield 		= '?screen_name=machinima_com&count=20';
-		$getfield 		= '?screen_name=veronica&count=20';
+		$getfield 		= '?screen_name=machinima_com&count=20';
 		$requestMethod 	= 'GET';
 			
 		$twitter 	= new TwitterAPIExchange($settings);
