@@ -30,11 +30,10 @@
 	</div>
 	<div id="video">
 		<h2 id="video-header">Inside Gaming Daily</h2>
-<!-- 		<iframe width="937" height="527" src="//www.youtube.com/embed/BfJVgXBfSH8?rel=0" frameborder="0" allowfullscreen></iframe> -->
+		<iframe id="video-player" width="780" height="439" src="//www.youtube.com/embed/BfJVgXBfSH8" frameborder="0" allowfullscreen></iframe>
 	</div>
 	
 	<div id="games-container">
-<!--
 		<div id="games-countdown">
 			<timer id="gamesCountdown-timer" countdown="countdown" interval="1000">
 				<span id="countdownTimer-days" class="countdownTimer-digit">{{days}}</span>
@@ -45,7 +44,6 @@
 			
 		</div>
 		<div id="games-corner"></div>
--->
 		
 		<div id="games-list">
 			<div id="" class="game" data-ng-repeat="game in games">
@@ -63,9 +61,13 @@
 		<div id="footer-newsletter">
 			<span id="newsletter-header">Newsletter</span>
 			<form id="newsletter-form" name="newsletterForm" novalidate>
-				<input type="email" id="newsletter-input" data-ng-model="email" required/>
+				<input type="email" id="newsletter-input" data-ng-model="email" placeholder="Enter your email address..." required/>
 				<button id="newsletter-submit" class="transition" data-ng-disabled="newsletterForm.$invalid">Submit</button>
 			</form>
+		</div>
+		<div id="footer-legal">
+			<span id="legal-message">Don't worry, we don't spam ever</span>
+			<span id="legal-copyright">&copy;2013 Machinima, Inc. All rights reserved </span>
 		</div>
 	</div>
 </div>

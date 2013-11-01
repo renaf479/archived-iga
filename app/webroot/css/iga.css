@@ -82,7 +82,7 @@ button {
 }
 
 #header-logo {
-	/* background: transparent url(/img/header-logo.png) no-repeat 0 0; */
+	background: transparent url(/img/header-logo.png) no-repeat 0 0;
 	width: 295px;
 	height: 135px;
 	position: absolute;
@@ -297,6 +297,11 @@ button {
 	background: transparent url(/img/video-header.png) no-repeat 0 0;
 }
 
+#video-player {
+	margin: 15px auto 0;
+	display: block;
+}
+
 /* =======================================================================
 	Games Listing Container
 ========================================================================== */
@@ -360,9 +365,9 @@ button {
 #games-list {
 	clear: both;
 	background: transparent url(/img/body-repeat.png) repeat-y 0 0;
-	width: 1000px;
+	width: 985px;
 	margin: 0 auto;
-	padding: 0 15px 65px;
+	padding: 0 10px 65px;
 }
 
 .game {
@@ -370,17 +375,19 @@ button {
 	width: 220px;
 	height: 375px;
 	display: inline-block;
+	vertical-align: top;
 	margin: 13px;
 	position: relative;
 }
 
 .game-title {
 	color: #7e7e7f;
-	font-size: 18px;
+	font-size: 17px;
 	margin: 0;
-	height: 50px;
-	line-height: 30px;
-	text-indent: 15px;
+	width: 180px;
+	height: 45px;
+	margin: 5px 10px;
+	line-height: 20px;
 	font-weight: normal;
 }
 
@@ -425,7 +432,7 @@ button {
 }
 
 .gameVote-twitter {
-	background-position: -31px 0;
+	background-position: -62px 0;
 	left: 10px;
 	width: 31px;
 	height: 36px;
@@ -439,7 +446,7 @@ button {
 }
 
 .gameVote-general {
-	background-position: top right;
+	background-position: -124px 0;
 	width: 101px;
 	height: 39px;
 	right: -13px;
@@ -447,15 +454,19 @@ button {
 }
 
 .gameVote-twitter:after {
-	background: transparent url(/img/vote-sprite.png) no-repeat -31px -39px;
+	background: transparent url(/img/vote-sprite.png) no-repeat -93px 0;
 }
 
 .gameVote-facebook:after {
-	background: transparent url(/img/vote-sprite.png) no-repeat 0 -39px;
+	background: transparent url(/img/vote-sprite.png) no-repeat -31px 0;
 }
 
 .gameVote-general:after {
-	background: transparent url(/img/vote-sprite.png) no-repeat bottom right;
+	background: transparent url(/img/vote-sprite.png) no-repeat -225px 0;
+}
+
+.gameVote-general:disabled:after {
+	background: transparent url(/img/vote-sprite.png) no-repeat -326px 0;
 }
 
 /*
@@ -466,7 +477,7 @@ button {
 */
 
 /* =======================================================================
-	Game Showcase
+	Footer
 ========================================================================== */
 #footer {
 	background: transparent url(/img/footer-repeat.jpg) repeat-x 0 0;
@@ -526,4 +537,42 @@ button {
 
 #newsletter-submit:disabled {
 	opacity: .2;
+}
+
+#footer-legal {
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	color: #777777;
+	font-size: 12px;
+	text-align: center;
+	-webkit-transform: translate(-50%, 0);
+	   -moz-transform: translate(-50%, 0);
+	     -o-transform: translate(-50%, 0);
+	     	transform: translate(-50%, 0);
+}
+
+#legal-message,
+#legal-copyright {
+	display: block;
+}
+
+#legal-message {
+	text-transform: uppercase;
+	margin: 15px 0;
+	font-size: 13px;
+}
+
+#legal-copyright:before {
+	display: inline-block;
+	vertical-align: top;
+	content: "";
+	background: transparent url(/img/footer-logo.jpg) no-repeat left center;
+	width: 92px;
+	height: 17px;
+	margin: 0 5px 0 0;
+}
+
+#legal-copyright {
+	height: 17px;
 }
