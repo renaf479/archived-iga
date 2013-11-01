@@ -7,10 +7,13 @@
     src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Regular.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Regular-3ebe1de28d9e0f07c3f616be9af103ef.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Regular-d672b41ff8a220175e5b54c202399f6a.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Regular.svg#svgFontName) format("svg");
 }
 
+/*
 @font-face {
     font-family: 'ProximaNova-RegularItalic';
     src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-RegularItalic.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-RegularItalic-a5f85f4d65d1453a9413c74d41aafd48.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-RegularItalic-f55ba3b4f2b95896fa8e9b3fdb6783f5.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-RegularItalic.svg#svgFontName) format("svg");
 }
+
+*/
 
 @font-face {
     font-family: 'ProximaNova-Semibold';
@@ -22,6 +25,7 @@
     src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Bold.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Bold-242cf4c95fb0663f05652256e2e9c232.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Bold-74473c52a1ec339eda49441722db9791.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Bold.svg#svgFontName) format("svg");
 }
 
+/*
 @font-face {
     font-family: 'ProximaNova-Black';
     src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Black.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Black-062fa28cd9c03fd9d25cf6962012d596.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Black-caba3b4524d0eb697bff7ea502ea7dcd.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Black.svg#svgFontName) format("svg");
@@ -31,13 +35,13 @@
     font-family: 'Bitter-Regular';
     src: url(//machinima-static.s3.amazonaws.com/assets/Bitter-Regular.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/Bitter-Regular-be3404895c7cce66c65747c53465d17c.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/Bitter-Regular-76864867fed0e9840927525519e2e07c.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/Bitter-Regular.svg#svgFontName) format("svg");
 }
+*/
 
 body {
 	background: #000 url(/img/reskin.jpg) no-repeat top center;
 	color: #fff;
 	margin: 0;
 	font-family: "ProximaNova-Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
-    font-weight: "ProximaNova-Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
 a,
@@ -111,7 +115,7 @@ button {
 	width: 250px;
 	height: 47px;
 	position: absolute;
-	top: 5px;
+	top: 15px;
 	right: 0px;
 	margin: 0;
 	padding: 0;
@@ -303,7 +307,7 @@ button {
 
 #video {
 	width: 937px;
-	margin: 20px auto;
+	margin: 25px auto 40px;
 }
 
 #video-header {
@@ -311,10 +315,11 @@ button {
 	width: inherit;
 	height: 23px;
 	background: transparent url(/img/video-header.png) no-repeat 0 0;
+	margin: 0 0 30px 0;
 }
 
 #video-player {
-	margin: 15px auto 0;
+	margin: 15px auto;
 	display: block;
 }
 
@@ -322,7 +327,7 @@ button {
 	Games Listing Container
 ========================================================================== */
 #games-container {
-	font-family: "ProximaNova-Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-family: "ProximaNova-Semibold", "Helvetica Neue", Arial, Helvetica, sans-serif;
 	width: 1002px;
 	margin: 0 auto;
 }
@@ -384,7 +389,7 @@ button {
 	background: transparent url(/img/body-repeat.png) repeat-y 0 0;
 	width: 985px;
 	margin: 0 auto;
-	padding: 0 10px 65px;
+	padding: 20px 10px 65px;
 }
 
 .game {
@@ -393,7 +398,7 @@ button {
 	height: 375px;
 	display: inline-block;
 	vertical-align: top;
-	margin: 13px;
+	margin: 12px;
 	position: relative;
 }
 
@@ -403,7 +408,7 @@ button {
 	margin: 0;
 	width: 180px;
 	height: 35px;
-	margin: 10px;
+	margin: 5px 10px 10px 10px;
 	line-height: 20px;
 	font-weight: normal;
 }
@@ -573,6 +578,7 @@ button {
 	top: 15px;
 	right: 15px;
 	text-transform: uppercase;
+	font-size: 15px;
 }
 
 #newsletter-submit:disabled {

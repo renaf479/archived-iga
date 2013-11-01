@@ -9,7 +9,7 @@ var igaController = function($scope, Rest, $timeout) {
 		interval:	5000
 	}
 	
-	var timeout		= 3000;
+	var timeout		= 7000;
 	
 	//Parse JSON feed of games
 	function _loadGames(data) {

@@ -14,7 +14,7 @@
 					<a href="http://facebook.com/Machinima" id="social-facebook" class="social-icon transition" target="_blank">facebook</a>
 				</li>
 				<li>
-					<a href="http://twitter.com/machinima_com" id="social-google" class="social-icon transition" target="_blank">twitter</a>
+					<a href="https://plus.google.com/+Machinima/posts" id="social-google" class="social-icon transition" target="_blank">google</a>
 				</li>
 				<li>
 					<a href="http://instagram.com/machinima" id="social-instagram" class="social-icon transition" target="_blank">instagram</a>
@@ -41,7 +41,6 @@
 				<span id="countdownTimer-minutes" class="countdownTimer-digit">{{minutes}}</span>
 				<span id="countdownTimer-seconds" class="countdownTimer-digit">{{seconds}}</span>
 			</timer>
-			
 		</div>
 		<div id="games-corner"></div>
 		
