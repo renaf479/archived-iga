@@ -66,6 +66,21 @@ button {
 }
 
 /* =======================================================================
+	Notification
+========================================================================== */
+#notification {
+	font-family: "ProximaNova-Bold", "Helvetica Neue", Arial, Helvetica, sans-serif; 
+	width: 100%;
+	height: 50px;
+	background-color: rgba(0, 0, 0, .8);
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	text-align: center;
+	line-height: 50px;
+}
+
+/* =======================================================================
 	Header
 ========================================================================== */
 #header {
@@ -336,7 +351,7 @@ button {
 	color: #fff;
 	width: 285px;
 	position: absolute;
-	top: 68px;
+	top: 72px;
 	right: 320px;
 	font-size: 28px;
 }
@@ -350,7 +365,7 @@ button {
 }
 
 #countdownTimer-hours {
-	left: 89px;
+	left: 91px;
 }
 
 #countdownTimer-minutes {
@@ -387,8 +402,8 @@ button {
 	font-size: 17px;
 	margin: 0;
 	width: 180px;
-	height: 45px;
-	margin: 5px 10px;
+	height: 35px;
+	margin: 10px;
 	line-height: 20px;
 	font-weight: normal;
 }
@@ -467,8 +482,31 @@ button {
 	background: transparent url(/img/vote-sprite.png) no-repeat -225px 0;
 }
 
-.gameVote-general:disabled:after {
+.gameVote-general:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	background: transparent url(/img/vote-sprite.png) no-repeat -326px 0;
+	opacity: 0;
+}
+
+.gameVote-facebook:disabled:hover,
+.gameVote-twitter:disabled:hover,
+.gameVote-general:disabled:hover {
+	cursor: default;
+}
+
+.gameVote-facebook:disabled:hover:after,
+.gameVote-twitter:disabled:hover:after,
+.gameVote-general:disabled:hover:after {
+	opacity: 0;
+}
+
+.gameVote-general:disabled:before {
+	opacity: 1;
 }
 
 /*
@@ -490,7 +528,7 @@ button {
 
 #footer-newsletter {
 	position: absolute;
-	width: 461px;
+	width: 459px;
 	height: 80px;
 	left: 50%;
 	top: -45px;

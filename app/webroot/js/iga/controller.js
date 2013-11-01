@@ -3,6 +3,7 @@ var igaController = function($scope, Rest, $timeout) {
 	$scope.games 	= {};
 	$scope.voteDisabled	= '';
 	$scope.email = '';
+	$scope.notification = '';
 	
 	$scope.carousel	= {
 		interval:	5000
@@ -43,10 +44,12 @@ var igaController = function($scope, Rest, $timeout) {
 			post.route	= 'vote';
 		
 		Rest.post(post).then(function(response) {
+			$scope.notification = 'Vote submitted for '+model.meta.title;
 			$scope.voteDisabled = true;
 			
 			$timeout(function() {
 				$scope.voteDisabled = false;
+				$scope.notification = false;
 			}, timeout);
 			
 			//_loadGames(response);
@@ -64,8 +67,6 @@ var igaController = function($scope, Rest, $timeout) {
 				}
 				
 				window.open(link, '_blank');
-				
-				//console.log(message);
 			}
 		});
 	}	

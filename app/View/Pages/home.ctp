@@ -1,5 +1,5 @@
 <div id="" class="" data-ng-controller="igaController" data-ng-init="init()">
-
+	<div id="notification" class="transition" data-ng-show="notification">{{notification}}</div>
 	<div id="header">
 		<div id="header-container">
 			<a href="/" id="header-logo">Inside Gaming Awards</a>
