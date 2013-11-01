@@ -5,8 +5,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
-	<title>
-	</title>
+	<title>Inside Gaming Awards 2013</title>
 	<?php
 		//echo $this->Html->meta('icon');
 		//echo $this->Html->css('bootstrap.min');
