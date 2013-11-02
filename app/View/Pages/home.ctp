@@ -21,7 +21,7 @@
 				</li>
 			</ul>
 			<div id="twitter-feed">
-				<carousel id="" interval="carousel.interval">
+				<carousel id="">
 					<slide data-ng-repeat="tweet in tweets">{{tweet.text}}</slide>
 				</carousel>
 				<div id="twitter-logo" class="transition">twitter</div>
