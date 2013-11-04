@@ -17,4 +17,22 @@ angular.module('services', [])
 			}
 		};
 		return Rest;
+	})
+	.factory('Analytics', function() {
+		var Analytics = {
+			_track: function(action, label) {
+				console.log('Logged Event: '+action+' > '+label);
+				//_gaq.push(['_trackEvent', type]);
+			},
+			general: function(action, label) {
+				this._track(action, label);	
+			},
+			event: function(action, label) {
+				this._track(action, label);
+			},
+			link: function(label) {
+				this._track('Link Click', label);
+			}
+		}
+		return Analytics;
 	});

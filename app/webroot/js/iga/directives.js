@@ -15,3 +15,15 @@ igaApp.directive('gameArt', function(){
 		}	
 	}
 });
+
+igaApp.directive('carouselControl', function(Analytics) {
+	return {
+		restrict: 'C',
+		link: function(scope, element, attrs) {
+			element.bind('click', function() {
+				var action = element.hasClass('right')? 'Next': 'Prev';
+				Analytics.event('Twitter Ticker', action);
+			})
+		}
+	}
+});

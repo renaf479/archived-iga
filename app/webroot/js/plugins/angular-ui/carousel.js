@@ -74,7 +74,6 @@ angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
 
   $scope.next = function() {
     var newIndex = (currentIndex + 1) % slides.length;
-
     //Prevent this user-triggered transition from occurring if there is already one in progress
     if (!$scope.$currentTransition) {
       return self.select(slides[newIndex], 'next');

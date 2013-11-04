@@ -12,17 +12,18 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->Html->css('iga');
 		
 		//echo $this->Html->script('jquery.min');
-		echo $this->Html->script('angular.min');
-		echo $this->Html->script('iga/app');
+		echo $this->Html->script('plugins/angular.min');
+		echo $this->Html->script('plugins/angular-ui/carousel');
+		echo $this->Html->script('plugins/angular-ui/transition');
+		echo $this->Html->script('plugins/timer');
 		
+		echo $this->Html->script('iga/app');
 		echo $this->Html->script('iga/controller');
 		echo $this->Html->script('iga/directives');
 		echo $this->Html->script('iga/services');
 		
-		echo $this->Html->script('plugins/timer');
 		
-		echo $this->Html->script('plugins/angular-ui/carousel');
-		echo $this->Html->script('plugins/angular-ui/transition');
+		
 		//echo $this->Html->script('iga/filters');
 		
 		

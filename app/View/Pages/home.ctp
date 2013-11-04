@@ -5,23 +5,23 @@
 			<a href="/" id="header-logo">Inside Gaming Awards</a>
 			<ul id="social">
 				<li>
-					<a href="http://youtube.com/machinima" id="social-youtube" class="social-icon transition" target="_blank">Youtube</a>
+					<a href="http://youtube.com/machinima" id="social-youtube" class="social-icon transition" target="_blank" data-ng-click="trackEvent('link', 'Youtube')">Youtube</a>
 				</li>
 				<li>
-					<a href="http://twitter.com/machinima_com" id="social-twitter" class="social-icon transition" target="_blank">twitter</a>
+					<a href="http://twitter.com/machinima_com" id="social-twitter" class="social-icon transition" target="_blank" data-ng-click="trackEvent('link', 'Twitter')">twitter</a>
 				</li>
 				<li>
-					<a href="http://facebook.com/Machinima" id="social-facebook" class="social-icon transition" target="_blank">facebook</a>
+					<a href="http://facebook.com/Machinima" id="social-facebook" class="social-icon transition" target="_blank" data-ng-click="trackEvent('link', 'Facebook')">facebook</a>
 				</li>
 				<li>
-					<a href="https://plus.google.com/+Machinima/posts" id="social-google" class="social-icon transition" target="_blank">google</a>
+					<a href="https://plus.google.com/+Machinima/posts" id="social-google" class="social-icon transition" target="_blank" data-ng-click="trackEvent('link', 'Google+')">google</a>
 				</li>
 				<li>
-					<a href="http://instagram.com/machinima" id="social-instagram" class="social-icon transition" target="_blank">instagram</a>
+					<a href="http://instagram.com/machinima" id="social-instagram" class="social-icon transition" target="_blank" data-ng-click="trackEvent('link', 'Instagram')">instagram</a>
 				</li>
 			</ul>
 			<div id="twitter-feed">
-				<carousel id="">
+				<carousel id="" interval="carousel.interval">
 					<slide data-ng-repeat="tweet in tweets">{{tweet.text}}</slide>
 				</carousel>
 				<div id="twitter-logo" class="transition">twitter</div>
@@ -33,19 +33,33 @@
 		<iframe id="video-player" width="780" height="439" src="//www.youtube.com/embed/BfJVgXBfSH8" frameborder="0" allowfullscreen></iframe>
 	</div>
 	
+	<h2 id="games-header">Game of the Year</h2>
 	<div id="games-container">
 		<div id="games-countdown">
 			<timer id="gamesCountdown-timer" countdown="countdown" interval="1000">
-				<span id="countdownTimer-days" class="countdownTimer-digit">{{days}}</span>
-				<span id="countdownTimer-hours" class="countdownTimer-digit">{{hours}}</span>
-				<span id="countdownTimer-minutes" class="countdownTimer-digit">{{minutes}}</span>
-				<span id="countdownTimer-seconds" class="countdownTimer-digit">{{seconds}}</span>
+				<span id="countdownTimer-days" class="countdownTimer-digit">
+					{{days}}
+					<label class="countdownTimer-label">Days</label>
+				</span>
+				<span id="countdownTimer-hours" class="countdownTimer-digit">
+					{{hours}}
+					<label class="countdownTimer-label">Hours</label>
+				</span>
+				<span id="countdownTimer-minutes" class="countdownTimer-digit">
+					{{minutes}}
+					<label class="countdownTimer-label">Minutes</label>
+				</span>
+				<span id="countdownTimer-seconds" class="countdownTimer-digit">
+					{{seconds}}
+					<label class="countdownTimer-label">Seconds</label>
+				</span>
 			</timer>
+			<h3 id="gamesCountdown-header" class="clear">Vote for your favorite below!</h3>
 		</div>
-		<div id="games-corner"></div>
+		
 		
 		<div id="games-list">
-			<div id="" class="game" data-ng-repeat="game in games">
+			<div id="game-{{$index}}" class="game" data-ng-repeat="game in games">
 				<h3 class="game-title">{{game.meta.title}}</h3>
 				<game-art data-ng-model="game" class="game-art transition"></game-art>
 				<div class="game-vote">
@@ -54,14 +68,15 @@
 					<button class="gameVote-general transition" data-ng-click="vote(game)" data-ng-disabled="voteDisabled">Vote{{game.id}}</button>
 				</div>
 			</div>
+			<div class="clear"></div>
 		</div>
 	</div>
 	<div id="footer">
 		<div id="footer-newsletter">
 			<span id="newsletter-header">Newsletter</span>
-			<form id="newsletter-form" name="newsletterForm" novalidate>
-				<input type="email" id="newsletter-input" data-ng-model="email" placeholder="Enter your email address..." required/>
-				<button id="newsletter-submit" class="transition" data-ng-disabled="newsletterForm.$invalid">Submit</button>
+			<form id="newsletter-form" name="newsletterForm" data-ng-model="newsletter" novalidate>
+				<input type="email" id="newsletter-input" data-ng-model="newsletter.email" placeholder="Enter your email address..." required/>
+				<button id="newsletter-submit" class="transition" data-ng-disabled="newsletterForm.$invalid" data-ng-click="subscribe()">Submit</button>
 			</form>
 		</div>
 		<div id="footer-legal">

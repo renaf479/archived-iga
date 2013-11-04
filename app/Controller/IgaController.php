@@ -2,25 +2,18 @@
 
 class IgaController extends AppController {
 	public $components 	= array('Session', 'RequestHandler');
-	public $uses		= array('Game');
+	public $uses		= array('Game', 'Newsletter');
+	
+	public $settings = array(
+		'oauth_access_token'=>'14945792-rxT37AopLDO1USJDckQXNBRpxR3LhklcClFKSVroJ',
+		'oauth_access_token_secret'=>'69zSk1Eu2YNPrKxSlVOVCTGs2KI81mZ4W7eJYZnCNSjpg',
+		'consumer_key'=>'uHa2k1FflFmrwg5VMkNg',
+		'consumer_secret'=>'Vjdy2jex0xNHMBkDSA85g7qdKcWTNpZONpgdZHXLp4',
+		'username'=>'machinima_com'
+	);
+	
 /*
 	public $helpers 	= array('Form', 'Html', 'Session', 'Js', 'Usermgmt.UserAuth', 'Minify.Minify');
-	
-	public $uses		= array('OriginAd', 
-								'OriginComponent',
-								'OriginDemo',
-								'OriginSite',
-								'OriginTemplate',
-								'OriginAdSchedule', 
-								'OriginAdDesktopInitialContent', 
-								'OriginAdDesktopTriggeredContent',
-								'OriginAdTabetInitialContent', 
-								'OriginAdTabletTriggeredContent',
-								'OriginAdMobileInitialContent', 
-								'OriginAdMobileTriggeredContent',
-								'Usermgmt.User',
-								'Usermgmt.UserGroup', 
-								'Usermgmt.LoginToken');
 */
 
 	public function beforeFilter() {
@@ -76,24 +69,27 @@ class IgaController extends AppController {
 	}
 	
 	/**
+	*
+	*/
+	private function newsletter($data) {
+		if($this->Newsletter->save($data)) {
+			return true;
+		}
+	}
+	
+	/**
 	* Load Twitter feed
 	*/
 	private function twitter() {
 		App::import('vendor', 'Twitter/twitterApiExchange');
 		
 		$this->layout = 'ajax';
-		$settings = array(
-			'oauth_access_token'=>'14945792-rxT37AopLDO1USJDckQXNBRpxR3LhklcClFKSVroJ',
-			'oauth_access_token_secret'=>'69zSk1Eu2YNPrKxSlVOVCTGs2KI81mZ4W7eJYZnCNSjpg',
-			'consumer_key'=>'uHa2k1FflFmrwg5VMkNg',
-			'consumer_secret'=>'Vjdy2jex0xNHMBkDSA85g7qdKcWTNpZONpgdZHXLp4'
-		);
-			
+		
 		$url 			= 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-		$getfield 		= '?screen_name=machinima_com&count=20';
+		$getfield 		= '?screen_name='.$this->settings['username'].'&count=20';
 		$requestMethod 	= 'GET';
 			
-		$twitter 	= new TwitterAPIExchange($settings);
+		$twitter 	= new TwitterAPIExchange($this->settings);
 		$response	=  $twitter->setGetfield($getfield)
 			             ->buildOauth($url, $requestMethod)
 			             ->performRequest();

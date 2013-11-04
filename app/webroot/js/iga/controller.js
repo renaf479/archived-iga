@@ -1,8 +1,8 @@
-var igaController = function($scope, Rest, $timeout) {
+var igaController = function($scope, Rest, $timeout, Analytics) {
 	$scope.tweets 	= {};
 	$scope.games 	= {};
 	$scope.voteDisabled	= '';
-	$scope.email = '';
+	$scope.newsletter = {};
 	$scope.notification = '';
 	
 	$scope.carousel	= {
@@ -18,6 +18,7 @@ var igaController = function($scope, Rest, $timeout) {
 	
 	//Page init
 	$scope.init = function() {
+		Analytics.general('Page Load');
 		Rest.get('games').then(function(response) {
 			_loadGames(response.sort($scope.random));
 		});
@@ -27,15 +28,41 @@ var igaController = function($scope, Rest, $timeout) {
 		});
 		
 			//Starts countdown
-			var dString = "Nov 20, 2013 16:46 PDT";
+			var dString = "Dec 4, 2013 7:00 PST";
 			var d1 = new Date(dString);
 			var d2 = new Date();
 		$scope.countdown = Math.floor((d1.getTime() - d2.getTime())/1000);
 	}
 	
+	//Loges email for newsletter
+	$scope.subscribe = function() {
+		//console.log($scope.newsletter);
+		var post 		= $scope.newsletter;
+			post.route	= 'newsletter';
+			
+		Rest.post(post).then(function(response) {
+			Analytics.general('Newsletter');
+			$scope.newsletter	= {};
+			$scope.notification	= 'Newsletter subscribed. Thank you!';
+			
+			$timeout(function() {
+				$scope.notification = false;
+			}, timeout);
+		});
+	}
+	
 	//Randomizes the orderBy results
 	$scope.random = function(){
     	return 0.5 - Math.random();
+	}
+	
+	//Logs click-thrus	
+	$scope.trackEvent = function(action, location) {
+		switch(action) {
+			case 'link':
+				Analytics.link(location);
+				break;
+		}
 	}
 	
 	//Logs vote and returns social prompt if applicable
@@ -58,20 +85,23 @@ var igaController = function($scope, Rest, $timeout) {
 				switch(type) {
 					case 'facebook':
 						message	= 'Voted for #'+model.meta.hashtag+' for Machinima\'s Gamers Choice Award. Who will you vote for? #IGAs http://...';
-						link 	= 'http://www.facebook.com/sharer.php?'+
+						link 	= 'http://www.facebook.com/sharer.php'+
 									'?s=100'+
 									'&p[url]=http://iga.willfu.com'+
-									'&p[images][0]=http://iga.willfu.com/img/'+model.image+
+									'&p[images][0]=http://iga.willfu.com/img/games/'+model.meta.image+
 									'&p[title]=Inside Gaming Awards 2013'+
-									'&p[summary]'+message;
+									'&p[summary]='+encodeURIComponent(message);
+						Analytics.general('Vote - Facebook', model.meta.title);
 						break;
 					case 'twitter':
 						message = 'Voted for #'+model.meta.hashtag+' for Gamers Choice Award. Who will you vote for? #IGAs http://...'
 						link 	= 'https://twitter.com/share?url=/&text='+encodeURIComponent(message);
+						Analytics.general('Vote - Twitter', model.meta.title);
 						break;
 				}
-				
 				window.open(link, '_blank');
+			} else {
+				Analytics.general('Vote', model.meta.title);
 			}
 		});
 	}	

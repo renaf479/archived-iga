@@ -7,14 +7,6 @@
     src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Regular.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Regular-3ebe1de28d9e0f07c3f616be9af103ef.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Regular-d672b41ff8a220175e5b54c202399f6a.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Regular.svg#svgFontName) format("svg");
 }
 
-/*
-@font-face {
-    font-family: 'ProximaNova-RegularItalic';
-    src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-RegularItalic.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-RegularItalic-a5f85f4d65d1453a9413c74d41aafd48.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-RegularItalic-f55ba3b4f2b95896fa8e9b3fdb6783f5.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-RegularItalic.svg#svgFontName) format("svg");
-}
-
-*/
-
 @font-face {
     font-family: 'ProximaNova-Semibold';
     src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Semibold.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Semibold-8b7c258f71addd8f88274b83c39951f5.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Semibold-bb626741d8b7a6bf8cb5b00f62978112.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Semibold.svg#svgFontName) format("svg");
@@ -24,18 +16,6 @@
     font-family: 'ProximaNova-Bold';
     src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Bold.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Bold-242cf4c95fb0663f05652256e2e9c232.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Bold-74473c52a1ec339eda49441722db9791.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Bold.svg#svgFontName) format("svg");
 }
-
-/*
-@font-face {
-    font-family: 'ProximaNova-Black';
-    src: url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Black.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Black-062fa28cd9c03fd9d25cf6962012d596.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Black-caba3b4524d0eb697bff7ea502ea7dcd.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/ProximaNova-Black.svg#svgFontName) format("svg");
-}
-
-@font-face {
-    font-family: 'Bitter-Regular';
-    src: url(//machinima-static.s3.amazonaws.com/assets/Bitter-Regular.eot?#iefix) format("embedded-opentype"), url(//machinima-static.s3.amazonaws.com/assets/Bitter-Regular-be3404895c7cce66c65747c53465d17c.woff) format("woff"), url(//machinima-static.s3.amazonaws.com/assets/Bitter-Regular-76864867fed0e9840927525519e2e07c.ttf) format("truetype"), url(//machinima-static.s3.amazonaws.com/assets/Bitter-Regular.svg#svgFontName) format("svg");
-}
-*/
 
 body {
 	background: #000 url(/img/reskin.jpg) no-repeat top center;
@@ -48,6 +28,10 @@ a,
 input,
 button {
 	outline: none;
+}
+
+.clear {
+	clear: both;
 }
 
 .transition,
@@ -328,59 +312,79 @@ button {
 /* =======================================================================
 	Games Listing Container
 ========================================================================== */
+#games-header {
+	background: transparent url(/img/games-header.png) no-repeat 0 0;
+	width: 1002px;
+	height: 52px;
+	margin: 0 auto;
+	text-indent: -5000em;
+}
+
 #games-container {
 	font-family: "ProximaNova-Semibold", "Helvetica Neue", Arial, Helvetica, sans-serif;
 	width: 1002px;
 	margin: 0 auto;
-}
-
-#games-countdown,
-#games-corner {
-	height: 161px;
-	float: left;
-}
-
-#games-countdown {
-	position: relative;
-	width: 960px;
-	background: transparent url(/img/body-header-left.jpg) no-repeat 0 0;
-}
-
-#games-corner {
-	width: 42px;
-	background: transparent url(/img/body-header-right.png) no-repeat 0 0;
+	background: transparent url(/img/body-repeat.png) repeat-y 0 0;
 }
 
 /* =======================================================================
 	Countdown
 ========================================================================== */
+#games-countdown {
+	width: 1002px;
+	display: block;
+	position: relative;
+}
+
+#gamesCountdown-header {
+	font-size: 22px;
+	font-weight: normal;
+	color: #ba0b09;
+	margin: 0;
+	text-transform: uppercase;
+	text-align: center;
+}
+
 #gamesCountdown-timer {
 	color: #fff;
-	width: 285px;
-	position: absolute;
-	top: 72px;
-	right: 320px;
 	font-size: 28px;
+	width: 285px;
+	height: 70px;
+	margin: 0 auto 20px;
+	display: block;
+	padding-top: 5px;
 }
 
 .countdownTimer-digit {
-	position: absolute;
+	background: transparent url(/img/countdown.png) no-repeat 0 0;
+	width: 72px;
+	height: 57px;
+	float: left;
+	line-height: 57px;
+	text-align: center;
+	text-indent: 3px;
+}
+
+.countdownTimer-label {
+	color: #7e7e7f;
+	line-height: 10px;
+	font-size: 10px;
+	text-transform: uppercase;
+	display: block;
+	margin-top: 5px;
+	text-align: center;
+	width: 100%;
+	text-indent: 5px;
 }
 
 #countdownTimer-days {
-	left: 18px;
+	background-position: right top;
+	width: 67px;
+	text-indent: 0;
 }
 
-#countdownTimer-hours {
-	left: 91px;
-}
-
-#countdownTimer-minutes {
-	right: 91px;
-}
-
-#countdownTimer-seconds {
-	right: 18px;
+#countdownTimer-days .countdownTimer-label {
+	text-indent: 0;
 }
 
 /* =======================================================================
@@ -388,20 +392,28 @@ button {
 ========================================================================== */
 #games-list {
 	clear: both;
-	background: transparent url(/img/body-repeat.png) repeat-y 0 0;
-	width: 985px;
+	width: 942px;
 	margin: 0 auto;
-	padding: 20px 10px 65px;
+	padding: 20px 30px 65px;
 }
 
 .game {
 	background: transparent url(/img/games-container.png) no-repeat 0 0;
 	width: 220px;
 	height: 375px;
-	display: inline-block;
-	vertical-align: top;
-	margin: 12px;
+	margin: 0px 20px 35px 0;
 	position: relative;
+	float: left;
+	
+/*
+	-webkit-box-shadow: 0px -5px 3px rgba(0, 0, 0, 0.66);
+	   -moz-box-shadow: 0px -5px 3px rgba(0, 0, 0, 0.66);
+	        box-shadow: 0px -5px 3px rgba(0, 0, 0, 0.66);
+*/
+}
+
+.game:nth-child(4n) {
+	margin-right: 0;
 }
 
 .game-title {
@@ -414,15 +426,6 @@ button {
 	line-height: 20px;
 	font-weight: normal;
 }
-
-/*
-.game-art-container {
-	width: 220px;
-	height: 280px;
-	overflow: hidden;
-	position: relative;
-}
-*/
 
 .game-art {
 	background-position: center center;
@@ -516,12 +519,6 @@ button {
 	opacity: 1;
 }
 
-/*
-.gameVote-general:hover,
-.gameVote-general:disabled {
-	background-position: 0 bottom;
-}
-*/
 
 /* =======================================================================
 	Footer
@@ -531,6 +528,10 @@ button {
 	width: 100%;
 	height: 199px;
 	position: relative;
+	        
+	-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75);
+	   -moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75);
+	   		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75);
 }
 
 #footer-newsletter {
