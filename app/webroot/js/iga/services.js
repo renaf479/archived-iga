@@ -21,8 +21,9 @@ angular.module('services', [])
 	.factory('Analytics', function() {
 		var Analytics = {
 			_track: function(category, action, label) {
-				console.log('Logged Event: '+category+' > '+action+'>'+label);
-				//_gaq.push(['_trackEvent', category, action, label]);
+				//console.log('Logged Event: '+category+' > '+action+'>'+label);
+				//ga.push(['_trackEvent', category, action, label]);
+				ga('send', 'event', category, action, label);
 			},
 			general: function(category, action, label) {
 				this._track(category, action, label);	
