@@ -20,18 +20,15 @@ angular.module('services', [])
 	})
 	.factory('Analytics', function() {
 		var Analytics = {
-			_track: function(action, label) {
-				console.log('Logged Event: '+action+' > '+label);
-				//_gaq.push(['_trackEvent', type]);
+			_track: function(category, action, label) {
+				console.log('Logged Event: '+category+' > '+action+'>'+label);
+				//_gaq.push(['_trackEvent', category, action, label]);
 			},
-			general: function(action, label) {
-				this._track(action, label);	
-			},
-			event: function(action, label) {
-				this._track(action, label);
+			general: function(category, action, label) {
+				this._track(category, action, label);	
 			},
 			link: function(label) {
-				this._track('Link Click', label);
+				this._track('Link Click', action);
 			}
 		}
 		return Analytics;

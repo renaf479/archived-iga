@@ -9,7 +9,8 @@ var igaController = function($scope, Rest, $timeout, Analytics) {
 		interval:	5000
 	}
 	
-	var timeout		= 7000;
+	var timeout		= 7000,
+		domain		= 'http://iga.willfu.com';
 	
 	//Parse JSON feed of games
 	function _loadGames(data) {
@@ -27,16 +28,24 @@ var igaController = function($scope, Rest, $timeout, Analytics) {
 			$scope.tweets = response;
 		});
 		
-			//Starts countdown
-			var dString = "Dec 4, 2013 7:00 PST";
-			var d1 = new Date(dString);
-			var d2 = new Date();
+		//Starts countdown
+		var dString = "Dec 4, 2013 7:00 PST";
+		var d1 = new Date(dString);
+		var d2 = new Date();
+		
 		$scope.countdown = Math.floor((d1.getTime() - d2.getTime())/1000);
 	}
 	
 	//Loges email for newsletter
 	$scope.subscribe = function() {
-		//console.log($scope.newsletter);
+		Analytics.general('Newsletter');
+		$scope.notification	= 'Newsletter subscribed. Thank you!';
+		
+		$timeout(function() {
+			$scope.notification = false;
+		}, timeout);
+		
+/*
 		var post 		= $scope.newsletter;
 			post.route	= 'newsletter';
 			
@@ -49,6 +58,7 @@ var igaController = function($scope, Rest, $timeout, Analytics) {
 				$scope.notification = false;
 			}, timeout);
 		});
+*/
 	}
 	
 	//Randomizes the orderBy results
@@ -87,21 +97,21 @@ var igaController = function($scope, Rest, $timeout, Analytics) {
 						message	= 'Voted for #'+model.meta.hashtag+' for Machinima\'s Gamers Choice Award. Who will you vote for? #IGAs http://...';
 						link 	= 'http://www.facebook.com/sharer.php'+
 									'?s=100'+
-									'&p[url]=http://iga.willfu.com'+
-									'&p[images][0]=http://iga.willfu.com/img/games/'+model.meta.image+
+									'&p[url]='+domain+
+									'&p[images][0]='+domain+'/img/games/'+model.meta.image+
 									'&p[title]=Inside Gaming Awards 2013'+
 									'&p[summary]='+encodeURIComponent(message);
-						Analytics.general('Vote - Facebook', model.meta.title);
+						Analytics.general('Vote', model.meta.title, 'Facebook');
 						break;
 					case 'twitter':
 						message = 'Voted for #'+model.meta.hashtag+' for Gamers Choice Award. Who will you vote for? #IGAs http://...'
 						link 	= 'https://twitter.com/share?url=/&text='+encodeURIComponent(message);
-						Analytics.general('Vote - Twitter', model.meta.title);
+						Analytics.general('Vote', model.meta.title, 'Twitter');
 						break;
 				}
 				window.open(link, '_blank');
 			} else {
-				Analytics.general('Vote', model.meta.title);
+				Analytics.general('Vote', model.meta.title, 'General');
 			}
 		});
 	}	

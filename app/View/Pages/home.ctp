@@ -74,9 +74,9 @@
 	<div id="footer">
 		<div id="footer-newsletter">
 			<span id="newsletter-header">Newsletter</span>
-			<form id="newsletter-form" name="newsletterForm" data-ng-model="newsletter" novalidate>
-				<input type="email" id="newsletter-input" data-ng-model="newsletter.email" placeholder="Enter your email address..." required/>
-				<button id="newsletter-submit" class="transition" data-ng-disabled="newsletterForm.$invalid" data-ng-click="subscribe()">Submit</button>
+			<form id="newsletter-form" name="newsletterForm" action="http://machinima.us4.list-manage.com/subscribe/post?u=22cb3ccbfa1254a4b05ceca93&amp;id=7711b4a200" method="post" target="_blank" data-ng-model="newsletter" novalidate>
+				<input type="email" name="EMAIL" id="newsletter-input" data-ng-model="newsletter.email" placeholder="Enter your email address..." required/>
+				<button name="subscribe" id="newsletter-submit" class="transition" data-ng-disabled="newsletterForm.$invalid" data-ng-click="subscribe()">Submit</button>
 			</form>
 		</div>
 		<div id="footer-legal">

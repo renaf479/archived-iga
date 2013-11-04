@@ -204,10 +204,10 @@ button {
 #twitter-feed .carousel-control.right {
 	background-position: bottom left;
 	right: 29px;
-	-moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	   -moz-transform: scaleX(-1);
+         -o-transform: scaleX(-1);
+		 	transform: scaleX(-1);
     filter: FlipH;
     -ms-filter: "FlipH";
 }
@@ -232,7 +232,10 @@ button {
 	overflow: hidden;
 	left: 310px;
 	top: 50%;
-	transform: translate(0, -50%);
+	-webkit-transform:	translate(0, -50%);
+	   -moz-transform:	translate(0, -50%);
+         -o-transform:	translate(0, -50%);
+		 	transform:  translate(0, -50%);
 }
 
 .carousel-inner > .item {
@@ -540,10 +543,10 @@ button {
 	height: 80px;
 	left: 50%;
 	top: -45px;
-	-moz-transform:	 translate(-50%, 0);
-    -o-transform:	 translate(-50%, 0);
-    -webkit-transform:  translate(-50%, 0);
-    transform:  translate(-50%, 0);
+	-webkit-transform:	translate(-50%, 0);
+	   -moz-transform:	translate(-50%, 0);
+         -o-transform:	translate(-50%, 0);
+		 	transform:  translate(-50%, 0);
 }
 
 #newsletter-header {
@@ -624,4 +627,5 @@ button {
 
 #legal-copyright {
 	height: 17px;
+	line-height: 18px;
 }

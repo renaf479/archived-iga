@@ -22,7 +22,7 @@ igaApp.directive('carouselControl', function(Analytics) {
 		link: function(scope, element, attrs) {
 			element.bind('click', function() {
 				var action = element.hasClass('right')? 'Next': 'Prev';
-				Analytics.event('Twitter Ticker', action);
+				Analytics.general('Twitter Ticker', action);
 			})
 		}
 	}
