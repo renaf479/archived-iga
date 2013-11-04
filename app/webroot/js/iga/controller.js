@@ -57,8 +57,13 @@ var igaController = function($scope, Rest, $timeout) {
 				var message, link;
 				switch(type) {
 					case 'facebook':
-						message	= 'Voted for #'+model.meta.hashtag+' for Machinima’s Gamers Choice Award. Who will you vote for? #IGAs http://...';
-						link 	= '';
+						message	= 'Voted for #'+model.meta.hashtag+' for Machinima\'s Gamers Choice Award. Who will you vote for? #IGAs http://...';
+						link 	= 'http://www.facebook.com/sharer.php?'+
+									'?s=100'+
+									'&p[url]=http://iga.willfu.com'+
+									'&p[images][0]=http://iga.willfu.com/img/'+model.image+
+									'&p[title]=Inside Gaming Awards 2013'+
+									'&p[summary]'+message;
 						break;
 					case 'twitter':
 						message = 'Voted for #'+model.meta.hashtag+' for Gamers Choice Award. Who will you vote for? #IGAs http://...'
