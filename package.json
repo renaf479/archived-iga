@@ -1,0 +1,14 @@
+{
+    "name" : "IGA",
+    "version" : "1.0.0",
+    "author" : "Willie Fu",
+    "private" : true,
+    "devDependencies" : {
+        "grunt": 					"~0.4.1",
+        "grunt-contrib-cssmin":     "*",
+        "grunt-contrib-concat":		"*",
+        "grunt-contrib-uglify":     "*",
+        "grunt-contrib-watch":      "*",
+        "matchdep":                 "*"
+    } 
+}

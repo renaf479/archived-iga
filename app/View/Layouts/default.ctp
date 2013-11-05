@@ -18,7 +18,7 @@
 		echo $this->Html->script('iga/directives');
 		echo $this->Html->script('iga/services');
 */
-		echo $this->Html->script('iga.min.js');
+		echo $this->Html->script('min/iga.min.js');
 		
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
