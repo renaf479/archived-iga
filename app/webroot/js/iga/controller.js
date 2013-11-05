@@ -116,3 +116,5 @@ var igaController = function($scope, Rest, $timeout, Analytics) {
 		});
 	}	
 }
+
+igaController.$inject = ['$scope', 'Rest', '$timeout', 'Analytics'];

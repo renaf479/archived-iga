@@ -31,29 +31,3 @@ link: function(scope, element, attrs) {
 			})
 		}
 */
-
-
-
-/*
-var myModule = angular.module('myModule', []);
-myModule.directive('breaksWhenMinified', ['anyService', function(anyService) {
-  return {
-    restrict: 'A',
-    controller: function($scope, $attrs, $element) {
-        alert($scope.whatever);
-    }
-});
-
-
-var myModule = angular.module('myModule', []);
-myModule.directive('breaksWhenMinified', ['anyService', function(anyService) {
-
-  return {
-    restrict: 'A',
-    controller: ['$scope', '$attrs', '$element', function($scope, $attrs, $element) {
-      alert($scope.whatever);
-    }]
- };
-
-});
-*/

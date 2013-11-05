@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('services', [])
-	.factory('Rest', function($http) {
+	.factory('Rest', ['$http', function($http) {
 		var Rest = {
 			get: function(action) {
 				var promise = $http.get('/rest/get/'+action).then(function(response) {
@@ -17,8 +17,8 @@ angular.module('services', [])
 			}
 		};
 		return Rest;
-	})
-	.factory('Analytics', function() {
+	}])
+	.factory('Analytics', [function() {
 		var Analytics = {
 			_track: function(category, action, label) {
 				//console.log('Logged Event: '+category+' > '+action+'>'+label);
@@ -33,4 +33,4 @@ angular.module('services', [])
 			}
 		}
 		return Analytics;
-	});
+	}]);

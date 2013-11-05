@@ -13,10 +13,10 @@
 		echo $this->Html->script('plugins/angular-ui/transition');
 		echo $this->Html->script('plugins/timer');
 		
-		echo $this->Html->script('iga/app');
-		echo $this->Html->script('iga/controller');
-		echo $this->Html->script('iga/directives');
-		echo $this->Html->script('iga/services');
+		echo $this->Html->script('min/app.min');
+		echo $this->Html->script('min/controller.min');
+		echo $this->Html->script('min/directives.min');
+		echo $this->Html->script('min/services.min');
 */
 		echo $this->Html->script('min/iga.min.js');
 		
