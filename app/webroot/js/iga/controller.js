@@ -1,7 +1,7 @@
 var igaController = function($scope, Rest, $timeout, Analytics) {
 	$scope.tweets 	= {};
 	$scope.games 	= {};
-	$scope.voteDisabled	= '';
+	$scope.voteDisabled	= false;
 	$scope.newsletter = {};
 	$scope.notification = '';
 	
@@ -90,7 +90,8 @@ var igaController = function($scope, Rest, $timeout, Analytics) {
 			
 			//_loadGames(response);
 			if(typeof type !== 'undefined') {
-				Analytics.general('Vote', model.meta.title, type);
+				var label = (type === 'twitter')? 'Twitter': 'Facebook';
+				Analytics.general('Vote', model.meta.title, label);
 /*
 				var message, link;
 				switch(type) {

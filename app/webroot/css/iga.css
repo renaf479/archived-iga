@@ -506,8 +506,12 @@ button {
 	opacity: 0;
 }
 
-.gameVote-facebook:disabled:hover,
-.gameVote-twitter:disabled:hover,
+.gameVote-facebook[disabled=disabled],
+.gameVote-twitter[disabled=disabled] {
+	cursor: default !important;
+	pointer-events: none;	
+}
+
 .gameVote-general:disabled:hover {
 	cursor: default;
 }
