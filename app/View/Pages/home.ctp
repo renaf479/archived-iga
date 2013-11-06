@@ -63,8 +63,8 @@
 				<h3 class="game-title">{{game.meta.title}}</h3>
 				<game-art data-ng-model="game" class="game-art transition"></game-art>
 				<div class="game-vote">
-					<button class="gameVote-twitter transition" data-ng-click="vote(game, 'twitter')" data-ng-disabled="voteDisabled">Twitter</button>
-					<button class="gameVote-facebook transition" data-ng-click="vote(game, 'facebook')" data-ng-disabled="voteDisabled">Facebook</button>
+					<vote-button data-type="twitter" data-ng-model="game" data-ng-click="vote(game, 'twitter')">twitter</vote-button>
+					<vote-button data-type="facebook" data-ng-model="game" data-ng-click="vote(game, 'facebook')">facebook</vote-button>
 					<button class="gameVote-general transition" data-ng-click="vote(game)" data-ng-disabled="voteDisabled">Vote{{game.id}}</button>
 				</div>
 			</div>
@@ -85,14 +85,16 @@
 		</div>
 	</div>
 	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		var domain		= 'http://iga.willfu.com';
 	
-	  ga('create', 'UA-45443905-1', 'insidegamingawards.com');
-	  //ga('create', 'UA-45443905-1', {'cookieDomain': 'none'});//Localhost debug
-	  ga('send', 'pageview');
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		//ga('create', 'UA-45443905-1', 'insidegamingawards.com');
+		ga('create', 'UA-45443905-1', {'cookieDomain': 'none'});//Localhost debug
+		ga('send', 'pageview');
 	
 	</script>
 </div>

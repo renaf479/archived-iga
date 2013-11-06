@@ -5,20 +5,17 @@
 	<title>Inside Gaming Awards 2013</title>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css('iga');
-		
-/*
+		echo $this->Html->css('iga.min');
+		//echo $this->Html->script('iga.min');
 		echo $this->Html->script('plugins/angular.min');
 		echo $this->Html->script('plugins/angular-ui/carousel');
 		echo $this->Html->script('plugins/angular-ui/transition');
 		echo $this->Html->script('plugins/timer');
 		
-		echo $this->Html->script('min/app.min');
-		echo $this->Html->script('min/controller.min');
-		echo $this->Html->script('min/directives.min');
-		echo $this->Html->script('min/services.min');
-*/
-		echo $this->Html->script('min/iga.min.js');
+		echo $this->Html->script('iga/app');
+		echo $this->Html->script('iga/controller');
+		echo $this->Html->script('iga/directives');
+		echo $this->Html->script('iga/services');
 		
 		echo $this->fetch('meta');
 		echo $this->fetch('css');

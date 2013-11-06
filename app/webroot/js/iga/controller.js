@@ -9,8 +9,7 @@ var igaController = function($scope, Rest, $timeout, Analytics) {
 		interval:	5000
 	}
 	
-	var timeout		= 7000,
-		domain		= 'http://iga.willfu.com';
+	var timeout		= 7000;
 	
 	//Parse JSON feed of games
 	function _loadGames(data) {
@@ -91,6 +90,8 @@ var igaController = function($scope, Rest, $timeout, Analytics) {
 			
 			//_loadGames(response);
 			if(typeof type !== 'undefined') {
+				Analytics.general('Vote', model.meta.title, type);
+/*
 				var message, link;
 				switch(type) {
 					case 'facebook':
@@ -110,6 +111,7 @@ var igaController = function($scope, Rest, $timeout, Analytics) {
 						break;
 				}
 				window.open(link, '_blank');
+*/
 			} else {
 				Analytics.general('Vote', model.meta.title, 'General');
 			}
