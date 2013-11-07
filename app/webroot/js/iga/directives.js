@@ -28,10 +28,11 @@ igaApp.directive('voteButton', ['Analytics', function(Analytics) {
 		restrict: 	'E',
 		scope: {
 			ngClick:	'&',
+			ngDisabled:	'=',
 			ngModel:	'=',
 			type:		'@'
 		},
-		template: 	'<div><a href="{{link}}" target="_blank" class="gameVote-{{type}} transition" data-ng-click="ngClick()"></a></div>',
+		template: 	'<div}"><a href="{{link}}" target="_blank" class="gameVote-{{type}} transition" data-ng-click="ngClick()" data-ng-disabled="ngDisabled">{{voteDisabled}}</a></div>',
 		transclude: true,
 		link: function(scope, element, attrs) {
 			var message;
