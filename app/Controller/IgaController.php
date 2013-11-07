@@ -59,13 +59,14 @@ class IgaController extends AppController {
 	* Logs vote
 	*/
 	private function vote($data) {
-		//print_r($data);
-		$save['id']		= $data['id'];
-		$save['votes']	= $data['votes']+1;
-		if($this->Game->save($save)) {
-			$this->games();
-			return $this->render('json/games');
-		}
+		if($this->Game->updateAll(
+			array(
+				'Game.votes'=>'Game.votes+1'
+			),
+			array(
+				'Game.id'=>$data['id']
+			)
+		));
 	}
 	
 	/**
