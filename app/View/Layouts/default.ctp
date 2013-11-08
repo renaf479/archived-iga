@@ -6,7 +6,8 @@
 	<?php
 		echo $this->Html->meta('icon');
 		echo $this->Html->css('iga.min');
-		//echo $this->Html->script('iga.min');
+		echo $this->Html->script('iga.min');
+/*
 		echo $this->Html->script('plugins/angular.min');
 		echo $this->Html->script('plugins/angular-ui/carousel');
 		echo $this->Html->script('plugins/angular-ui/transition');
@@ -16,6 +17,7 @@
 		echo $this->Html->script('iga/controller');
 		echo $this->Html->script('iga/directives');
 		echo $this->Html->script('iga/services');
+*/
 		
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
