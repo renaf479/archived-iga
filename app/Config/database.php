@@ -72,14 +72,15 @@ class DATABASE_CONFIG {
 		//'encoding' => 'utf8',
 	);
 
+
 /*
-	public $test = array(
+	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'test_database_name',
+		'login' => 'iga',
+		'password' => 'HCqU=gGz6p',
+		'database' => 'iga',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);

@@ -37,16 +37,16 @@ LOCK TABLES `games` WRITE;
 
 INSERT INTO `games` (`id`, `meta`, `votes`)
 VALUES
-	(1,'{\"title\":\"Bioshock Infinite\",\"hashtag\":\"BioshockInfinite\",\"image\":\"bioshockinfinite.jpg\"}',1),
-	(2,'{\"title\":\"Tomb Raider\",\"hashtag\":\"TombRaider\",\"image\":\"tombraider.jpg\"}',2),
-	(3,'{\"title\":\"Grand Theft Auto V\",\"hashtag\":\"GTAV\",\"image\":\"gtav.jpg\"}',1),
-	(4,'{\"title\":\"Saint\'s Row 4\",\"hashtag\":\"SaintsRow4\",\"image\":\"saintsrow4.jpg\"}',1),
-	(5,'{\"title\":\"The Last of Us\",\"hashtag\":\"TheLastOfUs\",\"image\":\"lastofus.jpg\"}',1),
-	(6,'{\"title\":\"Battleblock Theatre\",\"hashtag\":\"BattleblockTheatre\",\"image\":\"battleblock.jpg\"}',1),
-	(7,'{\"title\":\"Battlefield 4\",\"hashtag\":\"Battlefield4\",\"image\":\"bf4.jpg\"}',1),
-	(8,'{\"title\":\"Call of Duty: Ghosts\",\"hashtag\":\"CoDGhosts\",\"image\":\"codghosts.jpg\"}',1),
-	(9,'{\"title\":\"DOTA 2\",\"hashtag\":\"DOTA2\",\"image\":\"dota2.jpg\"}',1),
-	(10,'{\"title\":\"Assassin\'s Creed 4\",\"hashtag\":\"AC4\",\"image\":\"ac4.jpg\"}',1);
+	(1,'{\"title\":\"Bioshock Infinite\",\"hashtag\":\"BioshockInfinite\",\"image\":\"bioshockinfinite.jpg\"}',0),
+	(2,'{\"title\":\"Tomb Raider\",\"hashtag\":\"TombRaider\",\"image\":\"tombraider.jpg\"}',0),
+	(3,'{\"title\":\"Grand Theft Auto V\",\"hashtag\":\"GTAV\",\"image\":\"gtav.jpg\"}',0),
+	(4,'{\"title\":\"Saint\'s Row 4\",\"hashtag\":\"SaintsRow4\",\"image\":\"saintsrow4.jpg\"}',0),
+	(5,'{\"title\":\"The Last of Us\",\"hashtag\":\"TheLastOfUs\",\"image\":\"lastofus.jpg\"}',0),
+	(6,'{\"title\":\"Battleblock Theatre\",\"hashtag\":\"BattleblockTheatre\",\"image\":\"battleblock.jpg\"}',0),
+	(7,'{\"title\":\"Battlefield 4\",\"hashtag\":\"Battlefield4\",\"image\":\"bf4.jpg\"}',0),
+	(8,'{\"title\":\"Call of Duty: Ghosts\",\"hashtag\":\"CoDGhosts\",\"image\":\"codghosts.jpg\"}',0),
+	(9,'{\"title\":\"DOTA 2\",\"hashtag\":\"DOTA2\",\"image\":\"dota2.jpg\"}',0),
+	(10,'{\"title\":\"Assassin\'s Creed 4\",\"hashtag\":\"AC4\",\"image\":\"ac4.jpg\"}',0);
 
 /*!40000 ALTER TABLE `games` ENABLE KEYS */;
 UNLOCK TABLES;
