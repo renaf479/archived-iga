@@ -61,17 +61,53 @@
  */
 class DATABASE_CONFIG {
 
-	public $default = array(
+	var $default	= null;
+	
+	var $dev = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'williefu_iga',
 		'password' => 'machinimaiga',
 		'database' => 'williefu_iga',
-		'prefix' => '',
-		//'encoding' => 'utf8',
+		'prefix' => ''
+	);
+	
+	var $stg = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'williefu_iga',
+		'password' => 'machinimaiga',
+		'database' => 'williefu_iga',
+		'prefix' => ''
+	);
+	
+	var $prod = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'iga',
+		'password' => 'HCqU=gGz6p',
+		'database' => 'iga',
+		'prefix' => ''
 	);
 
+	function __construct() {
+		if(isset($_SERVER['SERVER_NAME'])) {
+			switch($_SERVER['SERVER_NAME']) {
+				case 'local.iga':
+					$this->default	= $this->dev;
+					break;
+				case 'iga.willfu.com':
+					$this->default	= $this->stg;
+					break;
+				default:
+					$this->default	= $this->prod;
+					break;
+			}
+		}
+	}
 
 /*
 	public $default = array(
