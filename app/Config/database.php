@@ -59,6 +59,7 @@
  * For Postgres : http://www.postgresql.org/docs/9.2/static/sql-set.html
  * For Sql Server : http://msdn.microsoft.com/en-us/library/ms190356.aspx
  */
+ 
 class DATABASE_CONFIG {
 
 	var $default	= null;
