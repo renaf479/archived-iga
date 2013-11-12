@@ -87,9 +87,9 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'iga',
-		'password' => 'HCqU=gGz6p',
-		'database' => 'iga',
+		'login' => 'insideg5_iga',
+		'password' => 'qD~DMAI2rG6Q',
+		'database' => 'insideg5_iga',
 		'prefix' => ''
 	);
 
