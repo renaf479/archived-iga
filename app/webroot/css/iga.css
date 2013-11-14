@@ -320,6 +320,8 @@ button {
 	height: 52px;
 	margin: 0 auto;
 	text-indent: -5000em;
+	
+	margin-top: 20px;
 }
 
 #games-container {
