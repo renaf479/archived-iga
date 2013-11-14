@@ -41,11 +41,11 @@ igaApp.directive('voteButton', ['Analytics', function(Analytics) {
 					message		= 'Voted for #'+scope.ngModel.meta.hashtag+' for Machinima\'s Gamers Choice Award. Who will you vote for? #IGAs http://awe.sm/bHBdz';
 					scope.link 	= 'http://www.facebook.com/sharer.php'+
 								'?s=100'+
-								'&p[url]='+domain+
-								'&p[images][0]='+domain+'/img/games/'+scope.ngModel.meta.image+
-								'&p[title]=Inside Gaming Awards 2013'+
+								'&p[url]='+encodeURIComponent(domain)+
+								'&p[images][0]='+encodeURIComponent(domain+'/img/games/'+scope.ngModel.meta.image)+
+								'&p[title]='+encodeURIComponent('Inside Gaming Awards 2013')+
 								'&p[summary]='+encodeURIComponent(message);
-					break;
+					break;					
 				case 'twitter':
 					message 	= 'Voted for #'+scope.ngModel.meta.hashtag+' for Gamers Choice Award. Who will you vote for? #IGAs http://awe.sm/bHBdz'
 					scope.link 	= 'https://twitter.com/share?url=/&text='+encodeURIComponent(message);
