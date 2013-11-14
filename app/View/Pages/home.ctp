@@ -28,10 +28,12 @@
 			</div>
 		</div>
 	</div>
+<!--
 	<div id="video">
 		<h2 id="video-header">Inside Gaming Daily</h2>
 		<iframe id="video-player" width="780" height="439" src="//www.youtube.com/embed/BfJVgXBfSH8" frameborder="0" allowfullscreen></iframe>
 	</div>	
+-->
 	<h2 id="games-header">Game of the Year</h2>
 	<div id="games-container">
 		<div id="games-countdown">
