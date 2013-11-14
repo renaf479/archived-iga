@@ -11,7 +11,7 @@
 <table class="table table-striped table-bordered table-hover">
 	<thead>
 		<th data-ng-click="filter='meta.title';reverse=!reverse">Game Title</th>
-		<th data-ng-click="filter='votes';reverse=!reverse">Votes</th>
+		<th data-ng-click="filter='votes';reverse=!reverse">Votes (Total: {{total}})</th>
 	</thead>
 	<tr data-ng-repeat="result in results|orderBy:filter:reverse">
 		<td>{{result.meta.title}}</td>
