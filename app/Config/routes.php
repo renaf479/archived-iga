@@ -33,10 +33,9 @@
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
 
-
 Router::connect('/rest/get/:feed', array('controller'=>'iga', 'action'=>'platformGet'));
 Router::connect('/rest/post', array('controller'=>'iga', 'action'=>'platformPost'));
-
+Router::connect('/results/:auth', array('controller'=>'iga', 'action'=>'results'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

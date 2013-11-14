@@ -62,27 +62,33 @@ class IgaController extends AppController {
 		$this->render('json/games');
 	}
 	
-	/** 
-	* Logs vote
-	*/
-	private function vote($data) {
-		if($this->Game->updateAll(
-			array(
-				'Game.votes'=>'Game.votes+1'
-			),
-			array(
-				'Game.id'=>$data['id']
-			)
-		));
-	}
-	
 	/**
-	*
+	* ...Unused?
 	*/
 	private function newsletter($data) {
 		if($this->Newsletter->save($data)) {
 			return true;
 		}
+	}
+	
+	/**
+	* Load results
+	*/
+	public function results() {
+		if($this->request->params['auth'] && $this->request->params['auth'] === '7E317B05873C71B1EE6BE4A90DAA8C9C') {
+			$results = $this->Game->find('all',
+				array(
+					'order'=>array('Game.votes DESC')
+				)
+			);
+			$results	= Set::extract('/Game/.', $results);
+		} else {
+			$results = false;
+		}
+		
+		$this->layout = 'results';
+		$this->set('title_for_layout', 'Voting Results');	
+		$this->set('results', $results);
 	}
 	
 	/**
@@ -104,5 +110,19 @@ class IgaController extends AppController {
 			             
 		$this->set('twitter', $response);
 		$this->render('json/twitter');
+	}
+	
+	/** 
+	* Logs vote
+	*/
+	private function vote($data) {
+		if($this->Game->updateAll(
+			array(
+				'Game.votes'=>'Game.votes+1'
+			),
+			array(
+				'Game.id'=>$data['id']
+			)
+		));
 	}
 }
