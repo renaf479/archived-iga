@@ -63,7 +63,7 @@
 				<game-art data-ng-model="game" class="game-art transition"></game-art>
 				<div class="game-vote">
 					<vote-button data-type="twitter" data-ng-model="game" data-ng-click="vote(game, 'twitter')" data-ng-disabled="voteDisabled">twitter</vote-button>
-					<vote-button data-type="facebook" data-ng-model="game" data-ng-click="vote(game, 'facebook')" data-ng-disabled="voteDisabled">facebook</vote-button>
+<!-- 					<vote-button data-type="facebook" data-ng-model="game" data-ng-click="vote(game, 'facebook')" data-ng-disabled="voteDisabled">facebook</vote-button> -->
 					<button class="gameVote-general transition" data-ng-click="vote(game)" data-ng-disabled="voteDisabled">Vote{{game.id}}</button>
 				</div>
 			</div>
