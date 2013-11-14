@@ -82,6 +82,10 @@ class IgaController extends AppController {
 				)
 			);
 			$results	= Set::extract('/Game/.', $results);
+			
+			foreach($results as $key=>&$game) {
+				$game['meta']	= json_decode($game['meta']);
+			}
 		} else {
 			$results = false;
 		}
