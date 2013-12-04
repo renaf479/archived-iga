@@ -35,6 +35,7 @@
 	<h2 id="games-header">Game of the Year</h2>
 	<div id="games-container">
 		<div id="games-countdown">
+<!--
 			<timer id="gamesCountdown-timer" countdown="countdown" interval="1000">
 				<span id="countdownTimer-days" class="countdownTimer-digit">
 					{{days}}
@@ -53,6 +54,7 @@
 					<label class="countdownTimer-label">Seconds</label>
 				</span>
 			</timer>
+-->
 			<h3 id="gamesCountdown-header" class="clear">Vote for your favorite below!</h3>
 		</div>
 		
