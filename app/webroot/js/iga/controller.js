@@ -28,7 +28,7 @@ var igaController = function($scope, Rest, $timeout, Analytics) {
 		});
 		
 		//Starts countdown
-		var dString = "Dec 4, 2013 7:00 PST";
+		var dString = "Jan 4, 2014 7:00 PST";
 		var d1 = new Date(dString);
 		var d2 = new Date();
 		
