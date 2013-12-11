@@ -16,7 +16,7 @@ class IgaController extends AppController {
 		'oauth_access_token_secret'=>'69zSk1Eu2YNPrKxSlVOVCTGs2KI81mZ4W7eJYZnCNSjpg',
 		'consumer_key'=>'uHa2k1FflFmrwg5VMkNg',
 		'consumer_secret'=>'Vjdy2jex0xNHMBkDSA85g7qdKcWTNpZONpgdZHXLp4',
-		'username'=>'machinima_com'
+		'username'=>'machinima'
 	);
 	
 /*
