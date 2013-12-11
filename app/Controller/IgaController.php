@@ -5,18 +5,18 @@ class IgaController extends AppController {
 	public $uses		= array('Game', 'Newsletter');
 	
 	public $settings = array(
+/*
 		'oauth_access_token'=>'14945792-IQZVAgQtMm4ax4AwMy2EpI7uOPHHTD6eqCaEabZZy',
 		'oauth_access_token_secret'=>'Bniw8dJkbKS0cagX7wQrPkKr1Yf9ADqYRItOA4WEtdWBN',
 		'consumer_key'=>'EjPHxtS4AQdLOPyeKsiTPw',
 		'consumer_secret'=>'Odxoso5jK5kCJoZeP3kiaasdcHi46U7YTPugmEC3k',
 		'username'=>'machinima_com'
-/*
+*/
 		'oauth_access_token'=>'14945792-rxT37AopLDO1USJDckQXNBRpxR3LhklcClFKSVroJ',
 		'oauth_access_token_secret'=>'69zSk1Eu2YNPrKxSlVOVCTGs2KI81mZ4W7eJYZnCNSjpg',
 		'consumer_key'=>'uHa2k1FflFmrwg5VMkNg',
 		'consumer_secret'=>'Vjdy2jex0xNHMBkDSA85g7qdKcWTNpZONpgdZHXLp4',
 		'username'=>'machinima_com'
-*/
 	);
 	
 /*
